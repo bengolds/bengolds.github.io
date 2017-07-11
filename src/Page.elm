@@ -5,9 +5,10 @@ import Element exposing (Element, el, empty, text)
 import UrlParser exposing ((</>), s, string, map, oneOf, top, parseHash)
 import Navigation exposing (Location)
 import Style
-import StyleHelpers exposing (styleMap)
+import ElementHelpers exposing (styleMap)
 import SharedStyles exposing (Styles(..))
 import ProjectIndex
+import About
 
 
 type Page
@@ -54,6 +55,9 @@ toElement page =
     case page of
         ProjectIndexPage ->
             styleMap ProjectIndexStyle identity ProjectIndex.element
+
+        AboutPage ->
+            About.element
 
         _ ->
             text (toString page)

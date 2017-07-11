@@ -18,6 +18,7 @@ import Header
 type Styles
     = None
     | Top
+    | BodyText
     | HeaderStyle Header.Styles
     | ProjectIndexStyle ProjectIndex.Styles
 
@@ -29,6 +30,8 @@ stylesheet =
             [ font
             , Color.text Color.darkGray
             ]
+        , style BodyText
+            []
         , Style.Sheet.merge <|
             Style.Sheet.map HeaderStyle identity Header.styles
         , Style.Sheet.merge <|

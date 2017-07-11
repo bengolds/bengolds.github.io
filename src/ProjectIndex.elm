@@ -1,9 +1,10 @@
 module ProjectIndex exposing (element, styles, Styles)
 
-import Element exposing (Element, text, image, el, empty, row, wrappedRow, column, link)
+import Element exposing (Element, text, el, empty, row, wrappedRow, column, link)
 import Element.Attributes exposing (maxWidth, maxHeight, width, height, padding, paddingXY, spacing, px, percent)
 import Style exposing (..)
 import StyleHelpers exposing (font, scaledFont)
+import ElementHelpers exposing (image)
 import Style.Border as Border
 import Style.Color as Color
 import Color
@@ -114,15 +115,18 @@ chip project =
 
 chipImage : Project style variation msg -> Element Styles variation msg
 chipImage project =
-    let
-        staticImagePath =
-            "/assets/" ++ project.imageLocation
-
-        clipletPath =
-            "/assets/" ++ project.clipletLocation
-    in
-        el ImageArea [ width (px 80), height (percent 100) ] empty
-            |> Element.within
-                [ image staticImagePath StaticImage [ width (percent 100), height (percent 100) ] empty
-                , image clipletPath Cliplet [ width (percent 100), height (percent 100) ] empty
+    el ImageArea [ width (px 80), height (percent 100) ] empty
+        |> Element.within
+            [ image project.imageLocation
+                StaticImage
+                [ width (percent 100)
+                , height (percent 100)
                 ]
+                empty
+            , image project.clipletLocation
+                Cliplet
+                [ width (percent 100)
+                , height (percent 100)
+                ]
+                empty
+            ]

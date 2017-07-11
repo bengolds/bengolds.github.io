@@ -3,7 +3,7 @@ module Main exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (rel, href)
 import Header
-import StyleHelpers exposing (..)
+import ElementHelpers exposing (..)
 import SharedStyles exposing (..)
 import Element exposing (el, empty)
 import Navigation exposing (Location)

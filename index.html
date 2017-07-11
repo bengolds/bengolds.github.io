@@ -24762,7 +24762,25 @@ var _mdgriffith$style_elements$Style_Transition$Transition = F4(
 	function (a, b, c, d) {
 		return {delay: a, duration: b, easing: c, props: d};
 	});
-var _user$project$StyleHelpers$mapVariation = F2(
+var _user$project$StyleHelpers$scaled = A2(_mdgriffith$style_elements$Style_Scale$modular, 16, 1.618);
+var _user$project$StyleHelpers$scaledFont = function (n) {
+	return _mdgriffith$style_elements$Style_Font$size(
+		_user$project$StyleHelpers$scaled(n));
+};
+var _user$project$StyleHelpers$units = function (n) {
+	return _elm_lang$core$Basics$toFloat(n * 8);
+};
+var _user$project$StyleHelpers$font = _mdgriffith$style_elements$Style_Font$typeface(
+	{
+		ctor: '::',
+		_0: 'Oxygen Mono',
+		_1: {
+			ctor: '::',
+			_0: 'Overpass Mono',
+			_1: {ctor: '[]'}
+		}
+	});
+var _user$project$ElementHelpers$mapVariation = F2(
 	function (fn, attr) {
 		var _p0 = attr;
 		switch (_p0.ctor) {
@@ -24817,7 +24835,7 @@ var _user$project$StyleHelpers$mapVariation = F2(
 				return _mdgriffith$style_elements$Element_Internal_Model$Overflow(_p0._0);
 		}
 	});
-var _user$project$StyleHelpers$styleMap = F3(
+var _user$project$ElementHelpers$styleMap = F3(
 	function (toParent, toParentVariation, el) {
 		var _p1 = el;
 		switch (_p1.ctor) {
@@ -24833,15 +24851,15 @@ var _user$project$StyleHelpers$styleMap = F3(
 						_p1._0,
 						{
 							style: A2(_elm_lang$core$Maybe$map, toParent, _p1._0.style),
-							child: A3(_user$project$StyleHelpers$styleMap, toParent, toParentVariation, _p1._0.child),
+							child: A3(_user$project$ElementHelpers$styleMap, toParent, toParentVariation, _p1._0.child),
 							absolutelyPositioned: A2(
 								_elm_lang$core$Maybe$map,
 								_elm_lang$core$List$map(
-									A2(_user$project$StyleHelpers$styleMap, toParent, toParentVariation)),
+									A2(_user$project$ElementHelpers$styleMap, toParent, toParentVariation)),
 								_p1._0.absolutelyPositioned),
 							attrs: A2(
 								_elm_lang$core$List$map,
-								_user$project$StyleHelpers$mapVariation(toParentVariation),
+								_user$project$ElementHelpers$mapVariation(toParentVariation),
 								_p1._0.attrs)
 						}));
 			case 'Layout':
@@ -24852,278 +24870,26 @@ var _user$project$StyleHelpers$styleMap = F3(
 							style: A2(_elm_lang$core$Maybe$map, toParent, _p1._0.style),
 							children: A2(
 								_mdgriffith$style_elements$Element_Internal_Model$mapChildren,
-								A2(_user$project$StyleHelpers$styleMap, toParent, toParentVariation),
+								A2(_user$project$ElementHelpers$styleMap, toParent, toParentVariation),
 								_p1._0.children),
 							absolutelyPositioned: A2(
 								_elm_lang$core$Maybe$map,
 								_elm_lang$core$List$map(
-									A2(_user$project$StyleHelpers$styleMap, toParent, toParentVariation)),
+									A2(_user$project$ElementHelpers$styleMap, toParent, toParentVariation)),
 								_p1._0.absolutelyPositioned),
 							attrs: A2(
 								_elm_lang$core$List$map,
-								_user$project$StyleHelpers$mapVariation(toParentVariation),
+								_user$project$ElementHelpers$mapVariation(toParentVariation),
 								_p1._0.attrs)
 						}));
 			default:
 				return _mdgriffith$style_elements$Element_Internal_Model$Raw(_p1._0);
 		}
 	});
-var _user$project$StyleHelpers$scaled = A2(_mdgriffith$style_elements$Style_Scale$modular, 16, 1.618);
-var _user$project$StyleHelpers$scaledFont = function (n) {
-	return _mdgriffith$style_elements$Style_Font$size(
-		_user$project$StyleHelpers$scaled(n));
+var _user$project$ElementHelpers$image = function (path) {
+	return _mdgriffith$style_elements$Element$image(
+		A2(_elm_lang$core$Basics_ops['++'], '/assets/', path));
 };
-var _user$project$StyleHelpers$units = function (n) {
-	return _elm_lang$core$Basics$toFloat(n * 8);
-};
-var _user$project$StyleHelpers$font = _mdgriffith$style_elements$Style_Font$typeface(
-	{
-		ctor: '::',
-		_0: 'Oxygen Mono',
-		_1: {
-			ctor: '::',
-			_0: 'Overpass Mono',
-			_1: {ctor: '[]'}
-		}
-	});
-var _user$project$Reading$stylesheet = _mdgriffith$style_elements$Style$stylesheet(
-	{ctor: '[]'});
-var _user$project$Reading$Book = F4(
-	function (a, b, c, d) {
-		return {title: a, bookUrl: b, author: c, imageUrl: d};
-	});
-var _user$project$Reading$decodeBook = function (rawXml) {
-	return function (xmlDoc) {
-		return A5(
-			_elm_lang$core$Result$map4,
-			_user$project$Reading$Book,
-			A3(_eeue56$elm_xml$Xml_Query$tag, 'title', _eeue56$elm_xml$Xml_Query$string, xmlDoc),
-			A3(_eeue56$elm_xml$Xml_Query$tag, 'link', _eeue56$elm_xml$Xml_Query$string, xmlDoc),
-			A3(
-				_eeue56$elm_xml$Xml_Query$tag,
-				'author',
-				A2(_eeue56$elm_xml$Xml_Query$tag, 'name', _eeue56$elm_xml$Xml_Query$string),
-				xmlDoc),
-			A3(_eeue56$elm_xml$Xml_Query$tag, 'image_url', _eeue56$elm_xml$Xml_Query$string, xmlDoc));
-	}(
-		A2(
-			_elm_lang$core$Result$withDefault,
-			_eeue56$elm_xml$Xml_Encode$null,
-			_eeue56$elm_xml$Xml_Decode$decode(rawXml)));
-};
-var _user$project$Reading$getCurrentlyReading = function (msg) {
-	return A2(
-		_elm_lang$http$Http$send,
-		function (bookResult) {
-			return msg(
-				A2(
-					_elm_lang$core$Result$andThen,
-					_user$project$Reading$decodeBook,
-					A2(_elm_lang$core$Result$mapError, _elm_lang$core$Basics$toString, bookResult)));
-		},
-		_elm_lang$http$Http$getString('https://crossorigin.me/https://www.goodreads.com/review/list/?key=dwzdl5zmjovl9o41basow&v=2&shelf=currently-reading&id=32332180&page=1&per_page=1&sort=position&order=a'));
-};
-var _user$project$Reading$None = {ctor: 'None'};
-var _user$project$Reading$element = function (book) {
-	return A2(
-		_mdgriffith$style_elements$Element$layout,
-		_user$project$Reading$stylesheet,
-		A3(
-			_mdgriffith$style_elements$Element$row,
-			_user$project$Reading$None,
-			{ctor: '[]'},
-			{
-				ctor: '::',
-				_0: A2(
-					_mdgriffith$style_elements$Element$link,
-					book.bookUrl,
-					_mdgriffith$style_elements$Element$text(book.title)),
-				_1: {
-					ctor: '::',
-					_0: _mdgriffith$style_elements$Element$text(book.author),
-					_1: {
-						ctor: '::',
-						_0: A4(
-							_mdgriffith$style_elements$Element$image,
-							book.imageUrl,
-							_user$project$Reading$None,
-							{ctor: '[]'},
-							_mdgriffith$style_elements$Element$empty),
-						_1: {ctor: '[]'}
-					}
-				}
-			}));
-};
-var _user$project$Header$headerHeight = 80;
-var _user$project$Header$Link = {ctor: 'Link'};
-var _user$project$Header$textLink = F2(
-	function (content, url) {
-		return A2(
-			_mdgriffith$style_elements$Element$link,
-			url,
-			A3(
-				_mdgriffith$style_elements$Element$el,
-				_user$project$Header$Link,
-				{ctor: '[]'},
-				_mdgriffith$style_elements$Element$text(content)));
-	});
-var _user$project$Header$Header = {ctor: 'Header'};
-var _user$project$Header$Top = {ctor: 'Top'};
-var _user$project$Header$None = {ctor: 'None'};
-var _user$project$Header$styles = {
-	ctor: '::',
-	_0: A2(
-		_mdgriffith$style_elements$Style$style,
-		_user$project$Header$None,
-		{ctor: '[]'}),
-	_1: {
-		ctor: '::',
-		_0: A2(
-			_mdgriffith$style_elements$Style$style,
-			_user$project$Header$Top,
-			{
-				ctor: '::',
-				_0: _user$project$StyleHelpers$font,
-				_1: {ctor: '[]'}
-			}),
-		_1: {
-			ctor: '::',
-			_0: A2(
-				_mdgriffith$style_elements$Style$style,
-				_user$project$Header$Header,
-				{
-					ctor: '::',
-					_0: _mdgriffith$style_elements$Style_Border$bottom(2),
-					_1: {
-						ctor: '::',
-						_0: _mdgriffith$style_elements$Style_Color$background(_elm_lang$core$Color$white),
-						_1: {ctor: '[]'}
-					}
-				}),
-			_1: {
-				ctor: '::',
-				_0: A2(
-					_mdgriffith$style_elements$Style$style,
-					_user$project$Header$Link,
-					{
-						ctor: '::',
-						_0: _mdgriffith$style_elements$Style_Color$text(_elm_lang$core$Color$black),
-						_1: {
-							ctor: '::',
-							_0: _mdgriffith$style_elements$Style$hover(
-								{
-									ctor: '::',
-									_0: _mdgriffith$style_elements$Style_Color$background(_elm_lang$core$Color$gray),
-									_1: {ctor: '[]'}
-								}),
-							_1: {ctor: '[]'}
-						}
-					}),
-				_1: {ctor: '[]'}
-			}
-		}
-	}
-};
-var _user$project$Header$spacer = A3(
-	_mdgriffith$style_elements$Element$el,
-	_user$project$Header$None,
-	{
-		ctor: '::',
-		_0: _mdgriffith$style_elements$Element_Attributes$height(
-			_mdgriffith$style_elements$Element_Attributes$px(_user$project$Header$headerHeight + 16)),
-		_1: {ctor: '[]'}
-	},
-	_mdgriffith$style_elements$Element$empty);
-var _user$project$Header$logo = A4(
-	_mdgriffith$style_elements$Element$image,
-	'/assets/logo.jpg',
-	_user$project$Header$None,
-	{
-		ctor: '::',
-		_0: _mdgriffith$style_elements$Element_Attributes$height(
-			_mdgriffith$style_elements$Element_Attributes$px(40)),
-		_1: {
-			ctor: '::',
-			_0: _mdgriffith$style_elements$Element_Attributes$width(
-				_mdgriffith$style_elements$Element_Attributes$px(200)),
-			_1: {ctor: '[]'}
-		}
-	},
-	_mdgriffith$style_elements$Element$empty);
-var _user$project$Header$header = _mdgriffith$style_elements$Element$screen(
-	A3(
-		_mdgriffith$style_elements$Element$el,
-		_user$project$Header$Top,
-		{
-			ctor: '::',
-			_0: _mdgriffith$style_elements$Element_Attributes$alignTop,
-			_1: {
-				ctor: '::',
-				_0: _mdgriffith$style_elements$Element_Attributes$width(
-					_mdgriffith$style_elements$Element_Attributes$percent(100)),
-				_1: {ctor: '[]'}
-			}
-		},
-		A3(
-			_mdgriffith$style_elements$Element$row,
-			_user$project$Header$Header,
-			{
-				ctor: '::',
-				_0: _mdgriffith$style_elements$Element_Attributes$padding(16),
-				_1: {
-					ctor: '::',
-					_0: _mdgriffith$style_elements$Element_Attributes$spacing(32),
-					_1: {
-						ctor: '::',
-						_0: _mdgriffith$style_elements$Element_Attributes$height(
-							_mdgriffith$style_elements$Element_Attributes$px(_user$project$Header$headerHeight)),
-						_1: {
-							ctor: '::',
-							_0: _mdgriffith$style_elements$Element_Attributes$verticalCenter,
-							_1: {
-								ctor: '::',
-								_0: _mdgriffith$style_elements$Element_Attributes$alignLeft,
-								_1: {
-									ctor: '::',
-									_0: _mdgriffith$style_elements$Element_Attributes$width(
-										_mdgriffith$style_elements$Element_Attributes$percent(100)),
-									_1: {ctor: '[]'}
-								}
-							}
-						}
-					}
-				}
-			},
-			{
-				ctor: '::',
-				_0: _user$project$Header$logo,
-				_1: {
-					ctor: '::',
-					_0: A2(_user$project$Header$textLink, 'Projects', '#/projects'),
-					_1: {
-						ctor: '::',
-						_0: A2(_user$project$Header$textLink, 'About me', '#/about'),
-						_1: {
-							ctor: '::',
-							_0: A2(_user$project$Header$textLink, 'Resumé', '#/resume'),
-							_1: {ctor: '[]'}
-						}
-					}
-				}
-			})));
-var _user$project$Header$element = A3(
-	_mdgriffith$style_elements$Element$column,
-	_user$project$Header$None,
-	{ctor: '[]'},
-	{
-		ctor: '::',
-		_0: _user$project$Header$header,
-		_1: {
-			ctor: '::',
-			_0: _user$project$Header$spacer,
-			_1: {ctor: '[]'}
-		}
-	});
 var _user$project$Project$Project = F6(
 	function (a, b, c, d, e, f) {
 		return {title: a, description: b, imageLocation: c, clipletLocation: d, url: e, page: f};
@@ -25225,15 +24991,13 @@ var _user$project$ProjectIndex$Cliplet = {ctor: 'Cliplet'};
 var _user$project$ProjectIndex$StaticImage = {ctor: 'StaticImage'};
 var _user$project$ProjectIndex$ImageArea = {ctor: 'ImageArea'};
 var _user$project$ProjectIndex$chipImage = function (project) {
-	var clipletPath = A2(_elm_lang$core$Basics_ops['++'], '/assets/', project.clipletLocation);
-	var staticImagePath = A2(_elm_lang$core$Basics_ops['++'], '/assets/', project.imageLocation);
 	return A2(
 		_mdgriffith$style_elements$Element$within,
 		{
 			ctor: '::',
 			_0: A4(
-				_mdgriffith$style_elements$Element$image,
-				staticImagePath,
+				_user$project$ElementHelpers$image,
+				project.imageLocation,
 				_user$project$ProjectIndex$StaticImage,
 				{
 					ctor: '::',
@@ -25250,8 +25014,8 @@ var _user$project$ProjectIndex$chipImage = function (project) {
 			_1: {
 				ctor: '::',
 				_0: A4(
-					_mdgriffith$style_elements$Element$image,
-					clipletPath,
+					_user$project$ElementHelpers$image,
+					project.clipletLocation,
 					_user$project$ProjectIndex$Cliplet,
 					{
 						ctor: '::',
@@ -25520,12 +25284,278 @@ var _user$project$ProjectIndex$element = A3(
 		}
 	},
 	A2(_elm_lang$core$List$map, _user$project$ProjectIndex$category, _user$project$ProjectIndex$categories));
+var _user$project$Reading$stylesheet = _mdgriffith$style_elements$Style$stylesheet(
+	{ctor: '[]'});
+var _user$project$Reading$Book = F4(
+	function (a, b, c, d) {
+		return {title: a, bookUrl: b, author: c, imageUrl: d};
+	});
+var _user$project$Reading$decodeBook = function (rawXml) {
+	return function (xmlDoc) {
+		return A5(
+			_elm_lang$core$Result$map4,
+			_user$project$Reading$Book,
+			A3(_eeue56$elm_xml$Xml_Query$tag, 'title', _eeue56$elm_xml$Xml_Query$string, xmlDoc),
+			A3(_eeue56$elm_xml$Xml_Query$tag, 'link', _eeue56$elm_xml$Xml_Query$string, xmlDoc),
+			A3(
+				_eeue56$elm_xml$Xml_Query$tag,
+				'author',
+				A2(_eeue56$elm_xml$Xml_Query$tag, 'name', _eeue56$elm_xml$Xml_Query$string),
+				xmlDoc),
+			A3(_eeue56$elm_xml$Xml_Query$tag, 'image_url', _eeue56$elm_xml$Xml_Query$string, xmlDoc));
+	}(
+		A2(
+			_elm_lang$core$Result$withDefault,
+			_eeue56$elm_xml$Xml_Encode$null,
+			_eeue56$elm_xml$Xml_Decode$decode(rawXml)));
+};
+var _user$project$Reading$getCurrentlyReading = function (msg) {
+	return A2(
+		_elm_lang$http$Http$send,
+		function (bookResult) {
+			return msg(
+				A2(
+					_elm_lang$core$Result$andThen,
+					_user$project$Reading$decodeBook,
+					A2(_elm_lang$core$Result$mapError, _elm_lang$core$Basics$toString, bookResult)));
+		},
+		_elm_lang$http$Http$getString('https://crossorigin.me/https://www.goodreads.com/review/list/?key=dwzdl5zmjovl9o41basow&v=2&shelf=currently-reading&id=32332180&page=1&per_page=1&sort=position&order=a'));
+};
+var _user$project$Reading$None = {ctor: 'None'};
+var _user$project$Reading$element = function (book) {
+	return A2(
+		_mdgriffith$style_elements$Element$layout,
+		_user$project$Reading$stylesheet,
+		A3(
+			_mdgriffith$style_elements$Element$row,
+			_user$project$Reading$None,
+			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: A2(
+					_mdgriffith$style_elements$Element$link,
+					book.bookUrl,
+					_mdgriffith$style_elements$Element$text(book.title)),
+				_1: {
+					ctor: '::',
+					_0: _mdgriffith$style_elements$Element$text(book.author),
+					_1: {
+						ctor: '::',
+						_0: A4(
+							_mdgriffith$style_elements$Element$image,
+							book.imageUrl,
+							_user$project$Reading$None,
+							{ctor: '[]'},
+							_mdgriffith$style_elements$Element$empty),
+						_1: {ctor: '[]'}
+					}
+				}
+			}));
+};
+var _user$project$Header$headerHeight = 80;
+var _user$project$Header$Name = {ctor: 'Name'};
+var _user$project$Header$Link = {ctor: 'Link'};
+var _user$project$Header$textLink = F2(
+	function (content, url) {
+		return A2(
+			_mdgriffith$style_elements$Element$link,
+			url,
+			A3(
+				_mdgriffith$style_elements$Element$el,
+				_user$project$Header$Link,
+				{ctor: '[]'},
+				_mdgriffith$style_elements$Element$text(content)));
+	});
+var _user$project$Header$Header = {ctor: 'Header'};
+var _user$project$Header$Top = {ctor: 'Top'};
+var _user$project$Header$None = {ctor: 'None'};
+var _user$project$Header$styles = {
+	ctor: '::',
+	_0: A2(
+		_mdgriffith$style_elements$Style$style,
+		_user$project$Header$None,
+		{ctor: '[]'}),
+	_1: {
+		ctor: '::',
+		_0: A2(
+			_mdgriffith$style_elements$Style$style,
+			_user$project$Header$Top,
+			{
+				ctor: '::',
+				_0: _user$project$StyleHelpers$font,
+				_1: {
+					ctor: '::',
+					_0: _mdgriffith$style_elements$Style_Color$text(_elm_lang$core$Color$black),
+					_1: {ctor: '[]'}
+				}
+			}),
+		_1: {
+			ctor: '::',
+			_0: A2(
+				_mdgriffith$style_elements$Style$style,
+				_user$project$Header$Header,
+				{
+					ctor: '::',
+					_0: _mdgriffith$style_elements$Style_Border$bottom(2),
+					_1: {
+						ctor: '::',
+						_0: _mdgriffith$style_elements$Style_Color$background(_elm_lang$core$Color$white),
+						_1: {ctor: '[]'}
+					}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_mdgriffith$style_elements$Style$style,
+					_user$project$Header$Link,
+					{
+						ctor: '::',
+						_0: _mdgriffith$style_elements$Style$hover(
+							{
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Style_Color$background(_elm_lang$core$Color$gray),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_mdgriffith$style_elements$Style$pseudo,
+								'visited',
+								{
+									ctor: '::',
+									_0: _mdgriffith$style_elements$Style_Color$text(_elm_lang$core$Color$black),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_mdgriffith$style_elements$Style$style,
+						_user$project$Header$Name,
+						{
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Style_Font$bold,
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}
+			}
+		}
+	}
+};
+var _user$project$Header$spacer = A3(
+	_mdgriffith$style_elements$Element$el,
+	_user$project$Header$None,
+	{
+		ctor: '::',
+		_0: _mdgriffith$style_elements$Element_Attributes$height(
+			_mdgriffith$style_elements$Element_Attributes$px(_user$project$Header$headerHeight + 16)),
+		_1: {ctor: '[]'}
+	},
+	_mdgriffith$style_elements$Element$empty);
+var _user$project$Header$name = A3(
+	_mdgriffith$style_elements$Element$column,
+	_user$project$Header$Name,
+	{
+		ctor: '::',
+		_0: _mdgriffith$style_elements$Element_Attributes$alignLeft,
+		_1: {ctor: '[]'}
+	},
+	{
+		ctor: '::',
+		_0: A3(
+			_mdgriffith$style_elements$Element$el,
+			_user$project$Header$None,
+			{ctor: '[]'},
+			_mdgriffith$style_elements$Element$text('Ben')),
+		_1: {
+			ctor: '::',
+			_0: A3(
+				_mdgriffith$style_elements$Element$el,
+				_user$project$Header$None,
+				{ctor: '[]'},
+				_mdgriffith$style_elements$Element$text('Goldsmith')),
+			_1: {ctor: '[]'}
+		}
+	});
+var _user$project$Header$header = _mdgriffith$style_elements$Element$screen(
+	A3(
+		_mdgriffith$style_elements$Element$el,
+		_user$project$Header$Top,
+		{
+			ctor: '::',
+			_0: _mdgriffith$style_elements$Element_Attributes$alignTop,
+			_1: {
+				ctor: '::',
+				_0: _mdgriffith$style_elements$Element_Attributes$width(
+					_mdgriffith$style_elements$Element_Attributes$percent(100)),
+				_1: {ctor: '[]'}
+			}
+		},
+		A3(
+			_mdgriffith$style_elements$Element$row,
+			_user$project$Header$Header,
+			{
+				ctor: '::',
+				_0: _mdgriffith$style_elements$Element_Attributes$padding(16),
+				_1: {
+					ctor: '::',
+					_0: _mdgriffith$style_elements$Element_Attributes$spacing(32),
+					_1: {
+						ctor: '::',
+						_0: _mdgriffith$style_elements$Element_Attributes$verticalCenter,
+						_1: {
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Element_Attributes$alignLeft,
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element_Attributes$width(
+									_mdgriffith$style_elements$Element_Attributes$percent(100)),
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				}
+			},
+			{
+				ctor: '::',
+				_0: _user$project$Header$name,
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Header$textLink, 'Projects', '#/projects'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Header$textLink, 'About me', '#/about'),
+						_1: {
+							ctor: '::',
+							_0: A2(_user$project$Header$textLink, 'Resumé', '#/resume'),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			})));
+var _user$project$Header$element = A3(
+	_mdgriffith$style_elements$Element$column,
+	_user$project$Header$None,
+	{ctor: '[]'},
+	{
+		ctor: '::',
+		_0: _user$project$Header$header,
+		_1: {
+			ctor: '::',
+			_0: _user$project$Header$spacer,
+			_1: {ctor: '[]'}
+		}
+	});
 var _user$project$SharedStyles$ProjectIndexStyle = function (a) {
 	return {ctor: 'ProjectIndexStyle', _0: a};
 };
 var _user$project$SharedStyles$HeaderStyle = function (a) {
 	return {ctor: 'HeaderStyle', _0: a};
 };
+var _user$project$SharedStyles$BodyText = {ctor: 'BodyText'};
 var _user$project$SharedStyles$Top = {ctor: 'Top'};
 var _user$project$SharedStyles$None = {ctor: 'None'};
 var _user$project$SharedStyles$stylesheet = _mdgriffith$style_elements$Style$stylesheet(
@@ -25551,24 +25581,52 @@ var _user$project$SharedStyles$stylesheet = _mdgriffith$style_elements$Style$sty
 				}),
 			_1: {
 				ctor: '::',
-				_0: _mdgriffith$style_elements$Style_Sheet$merge(
-					A3(_mdgriffith$style_elements$Style_Sheet$map, _user$project$SharedStyles$HeaderStyle, _elm_lang$core$Basics$identity, _user$project$Header$styles)),
+				_0: A2(
+					_mdgriffith$style_elements$Style$style,
+					_user$project$SharedStyles$BodyText,
+					{ctor: '[]'}),
 				_1: {
 					ctor: '::',
 					_0: _mdgriffith$style_elements$Style_Sheet$merge(
-						A3(_mdgriffith$style_elements$Style_Sheet$map, _user$project$SharedStyles$ProjectIndexStyle, _elm_lang$core$Basics$identity, _user$project$ProjectIndex$styles)),
-					_1: {ctor: '[]'}
+						A3(_mdgriffith$style_elements$Style_Sheet$map, _user$project$SharedStyles$HeaderStyle, _elm_lang$core$Basics$identity, _user$project$Header$styles)),
+					_1: {
+						ctor: '::',
+						_0: _mdgriffith$style_elements$Style_Sheet$merge(
+							A3(_mdgriffith$style_elements$Style_Sheet$map, _user$project$SharedStyles$ProjectIndexStyle, _elm_lang$core$Basics$identity, _user$project$ProjectIndex$styles)),
+						_1: {ctor: '[]'}
+					}
 				}
 			}
 		}
 	});
+var _user$project$About$element = A3(
+	_mdgriffith$style_elements$Element$textLayout,
+	_user$project$SharedStyles$None,
+	{ctor: '[]'},
+	{
+		ctor: '::',
+		_0: A3(
+			_mdgriffith$style_elements$Element$el,
+			_user$project$SharedStyles$None,
+			{ctor: '[]'},
+			A4(
+				_user$project$ElementHelpers$image,
+				'headshot.jpg',
+				_user$project$SharedStyles$None,
+				{ctor: '[]'},
+				_mdgriffith$style_elements$Element$empty)),
+		_1: {ctor: '[]'}
+	});
 var _user$project$Page$toElement = function (page) {
 	var _p0 = page;
-	if (_p0.ctor === 'ProjectIndexPage') {
-		return A3(_user$project$StyleHelpers$styleMap, _user$project$SharedStyles$ProjectIndexStyle, _elm_lang$core$Basics$identity, _user$project$ProjectIndex$element);
-	} else {
-		return _mdgriffith$style_elements$Element$text(
-			_elm_lang$core$Basics$toString(page));
+	switch (_p0.ctor) {
+		case 'ProjectIndexPage':
+			return A3(_user$project$ElementHelpers$styleMap, _user$project$SharedStyles$ProjectIndexStyle, _elm_lang$core$Basics$identity, _user$project$ProjectIndex$element);
+		case 'AboutPage':
+			return _user$project$About$element;
+		default:
+			return _mdgriffith$style_elements$Element$text(
+				_elm_lang$core$Basics$toString(page));
 	}
 };
 var _user$project$Page$fakeLocation = function (path) {
@@ -25666,7 +25724,7 @@ var _user$project$Main$view = function (model) {
 							{ctor: '[]'},
 							{
 								ctor: '::',
-								_0: A3(_user$project$StyleHelpers$styleMap, _user$project$SharedStyles$HeaderStyle, _elm_lang$core$Basics$identity, _user$project$Header$element),
+								_0: A3(_user$project$ElementHelpers$styleMap, _user$project$SharedStyles$HeaderStyle, _elm_lang$core$Basics$identity, _user$project$Header$element),
 								_1: {
 									ctor: '::',
 									_0: _user$project$Page$toElement(model.page),

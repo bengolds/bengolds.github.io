@@ -17,12 +17,13 @@ type Styles
     | Top
     | Header
     | Link
+    | Name
 
 
 styles : List (Style Styles variation)
 styles =
     [ style None []
-    , style Top [ font ]
+    , style Top [ font, Color.text Color.black ]
     , style Header
         [ Border.bottom 2
 
@@ -37,11 +38,15 @@ styles =
         , Color.background Color.white
         ]
     , style Link
-        --[ Font.underline
-        [ Color.text Color.black
-        , hover
+        [ hover
             [ Color.background Color.gray
             ]
+        , pseudo "visited"
+            [ Color.text Color.black
+            ]
+        ]
+    , style Name
+        [ Font.bold
         ]
     ]
 
@@ -58,12 +63,13 @@ header =
         (row Header
             [ padding 16
             , spacing 32
-            , height (px headerHeight)
+
+            --, height (px headerHeight)
             , verticalCenter
             , alignLeft
             , width (percent 100)
             ]
-            [ logo
+            [ name
             , textLink "Projects" "#/projects"
             , textLink "About me" "#/about"
             , textLink "Resumé" "#/resume"
@@ -82,9 +88,13 @@ headerHeight =
     80
 
 
-logo : Element Styles variation msg
-logo =
-    image "/assets/logo.jpg" None [ height (px 40), width (px 200) ] empty
+name : Element Styles variation msg
+name =
+    column Name
+        [ alignLeft ]
+        [ el None [] <| text "Ben"
+        , el None [] <| text "Goldsmith"
+        ]
 
 
 textLink : String -> String -> Element Styles variation msg
