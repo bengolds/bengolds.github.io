@@ -6,7 +6,7 @@ import UrlParser exposing ((</>), s, string, map, oneOf, top, parseHash)
 import Navigation exposing (Location)
 import Style
 import ElementHelpers exposing (styleMap)
-import SharedStyles exposing (Styles(..))
+import Stylesheet exposing (Styles(..))
 import ProjectIndex
 import About
 

@@ -3,7 +3,7 @@ module Header exposing (..)
 import Element exposing (Element, el, column, row, image, link, text, empty, screen)
 import Element.Attributes exposing (..)
 import Style exposing (..)
-import StyleHelpers exposing (font)
+import SharedStyles exposing (font, units, pxUnits)
 import Style.Border as Border
 import Style.Font as Font
 import Style.Color as Color
@@ -25,7 +25,7 @@ styles =
     [ style None []
     , style Top [ font, Color.text Color.black ]
     , style Header
-        [ Border.bottom 2
+        [ Border.bottom 1
 
         --, Style.shadows
         --[ Shadow.box
@@ -38,11 +38,12 @@ styles =
         , Color.background Color.white
         ]
     , style Link
-        [ hover
+        [ Color.text Color.darkCharcoal
+        , hover
             [ Color.background Color.gray
             ]
         , pseudo "visited"
-            [ Color.text Color.black
+            [ Color.text Color.darkCharcoal
             ]
         ]
     , style Name
@@ -61,10 +62,9 @@ header =
     el Top
         [ alignTop, width (percent 100) ]
         (row Header
-            [ padding 16
-            , spacing 32
-
-            --, height (px headerHeight)
+            [ paddingXY (units 4) 0
+            , spacing (units 4)
+            , height (pxUnits headerHeight)
             , verticalCenter
             , alignLeft
             , width (percent 100)
@@ -80,12 +80,12 @@ header =
 
 spacer : Element Styles variation msg
 spacer =
-    el None [ height (px (headerHeight + 16)) ] empty
+    el None [ height <| pxUnits headerHeight ] empty
 
 
-headerHeight : Float
+headerHeight : Int
 headerHeight =
-    80
+    10
 
 
 name : Element Styles variation msg

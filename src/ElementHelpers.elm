@@ -1,18 +1,12 @@
-module ElementHelpers exposing (image, styleMap, pxUnits)
+module ElementHelpers exposing (image, styleMap)
 
 import Element
-import StyleHelpers exposing (units)
-import Element.Attributes exposing (px)
 import Element.Internal.Model exposing (Element(..), Attribute(..), mapChildren)
 
 
 image : String -> style -> List (Attribute variation msg) -> Element style variation msg -> Element style variation msg
 image path =
     Element.image ("/assets/" ++ path)
-
-
-pxUnits n =
-    px (units n)
 
 
 styleMap : (style -> parent) -> (variation -> parentVariation) -> Element style variation msg -> Element parent parentVariation msg

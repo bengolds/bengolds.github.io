@@ -1,39 +1,34 @@
 module SharedStyles exposing (..)
 
-import StyleHelpers exposing (..)
 import Style exposing (..)
-import Style.Color as Color
-import Color
 import Style.Font as Font
 import Style.Scale as Scale
-import Style.Sheet
-import ProjectIndex
-import Header
+import Element.Attributes exposing (px)
 
 
---import Style.Border as Border
---import Style.Color as Color
+font : Property class variation
+font =
+    Font.typeface [ "Oxygen Mono" ]
 
 
-type Styles
-    = None
-    | Top
-    | BodyText
-    | HeaderStyle Header.Styles
-    | ProjectIndexStyle ProjectIndex.Styles
+units : Int -> Float
+units n =
+    let
+        gridUnit =
+            8
+    in
+        toFloat (n * gridUnit)
 
 
-stylesheet =
-    Style.stylesheet
-        [ style None []
-        , style Top
-            [ font
-            , Color.text Color.darkGray
-            ]
-        , style BodyText
-            []
-        , Style.Sheet.merge <|
-            Style.Sheet.map HeaderStyle identity Header.styles
-        , Style.Sheet.merge <|
-            Style.Sheet.map ProjectIndexStyle identity ProjectIndex.styles
-        ]
+pxUnits n =
+    px (units n)
+
+
+scaled : Int -> Float
+scaled =
+    Scale.modular 16 (sqrt 1.618)
+
+
+scaledFont : Int -> Property class variation
+scaledFont n =
+    Font.size (scaled n)

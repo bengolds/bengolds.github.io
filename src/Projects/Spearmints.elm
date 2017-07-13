@@ -10,6 +10,6 @@ spearmints =
     , description = "bogus game"
     , imageLocation = "spearmints.jpg"
     , clipletLocation = "spearmints-clip.gif"
-    , url = "spearmints"
+    , url = "https://spearmints.itch.io/no-1"
     , page = text "spearmints"
     }

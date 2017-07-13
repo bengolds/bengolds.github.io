@@ -4,8 +4,10 @@ import Html exposing (..)
 import Html.Attributes exposing (rel, href)
 import Header
 import ElementHelpers exposing (..)
-import SharedStyles exposing (..)
+import Stylesheet exposing (stylesheet, Styles(..))
+import SharedStyles exposing (units)
 import Element exposing (el, empty)
+import Element.Attributes exposing (paddingXY)
 import Navigation exposing (Location)
 import Page exposing (Page, fromLocation)
 import Reading exposing (Book)
@@ -73,14 +75,14 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div []
-        [ node "link" [ rel "stylesheet", href "https://fonts.googleapis.com/css?family=Overpass+Mono|Oxygen+Mono" ] []
+        [ node "link" [ rel "stylesheet", href "https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono" ] []
         , Element.layout stylesheet
             (el Top
                 []
                 (Element.column None
                     []
                     [ styleMap HeaderStyle identity Header.element
-                    , Page.toElement model.page
+                    , el None [ paddingXY (units 4) (units 2) ] <| Page.toElement model.page
                     ]
                 )
             )

@@ -3,7 +3,7 @@ module ProjectIndex exposing (element, styles, Styles)
 import Element exposing (Element, text, el, empty, row, wrappedRow, column, link)
 import Element.Attributes exposing (maxWidth, maxHeight, width, height, padding, paddingXY, spacing, px, percent)
 import Style exposing (..)
-import StyleHelpers exposing (font, scaledFont)
+import SharedStyles exposing (font, scaledFont, units, pxUnits)
 import ElementHelpers exposing (image)
 import Style.Border as Border
 import Style.Color as Color
@@ -79,7 +79,6 @@ styles =
         , style Description
             []
         , style CategoryName
-            --[ Font.bold
             [ Color.text Color.black
             , scaledFont 1
             ]
@@ -88,25 +87,25 @@ styles =
 
 element : Element Styles variation msg
 element =
-    column None [ padding 16, spacing 32 ] (List.map category categories)
+    column None [ spacing <| units 4 ] (List.map category categories)
 
 
 category : Category style variation msg -> Element Styles variation msg
 category ( title, projects ) =
-    column Category [ spacing 16 ] <|
+    column Category [ spacing <| units 2 ] <|
         [ el CategoryName [] (text title)
-        , wrappedRow None [ spacing 16 ] (List.map chip projects)
+        , wrappedRow None [ spacing <| units 2 ] (List.map chip projects)
         ]
 
 
 chip : Project style variation msg -> Element Styles variation msg
 chip project =
-    link ("#/projects/" ++ project.url) <|
+    link (project.url) <|
         row Chip
-            [ width (px 320), height (px 80), spacing 8 ]
+            [ width <| pxUnits 40, height <| pxUnits 10, spacing <| units 1 ]
             [ chipImage project
             , column TextArea
-                [ paddingXY 0 8, spacing 8 ]
+                [ paddingXY 0 (units 1), spacing <| units 1 ]
                 [ el Title [] (text project.title)
                 , el Description [] (text project.description)
                 ]
@@ -115,7 +114,7 @@ chip project =
 
 chipImage : Project style variation msg -> Element Styles variation msg
 chipImage project =
-    el ImageArea [ width (px 80), height (percent 100) ] empty
+    el ImageArea [ width <| pxUnits 10, height (percent 100) ] empty
         |> Element.within
             [ image project.imageLocation
                 StaticImage
