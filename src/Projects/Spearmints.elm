@@ -7,9 +7,9 @@ import Element exposing (text)
 spearmints : Project style variation msg
 spearmints =
     { title = "Spearmints"
-    , description = "bogus game"
-    , imageLocation = "spearmints.jpg"
-    , clipletLocation = "spearmints-clip.gif"
+    , description = "room-scale VR escape game"
+    , imageLocation = "spearmints-icon.png"
+    , clipletLocation = "spearmints.webm"
     , url = "https://spearmints.itch.io/no-1"
     , page = text "spearmints"
     }

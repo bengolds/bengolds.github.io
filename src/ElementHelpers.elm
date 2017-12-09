@@ -1,12 +1,23 @@
-module ElementHelpers exposing (image, styleMap)
+module ElementHelpers exposing (video, image, styleMap)
 
-import Element
+import Element exposing (el, node)
+import Element.Attributes exposing (src)
 import Element.Internal.Model exposing (Element(..), Attribute(..), mapChildren)
 
 
 image : String -> style -> List (Attribute variation msg) -> Element style variation msg -> Element style variation msg
 image path =
     Element.image ("/assets/" ++ path)
+
+
+video : String -> style -> List (Attribute variation msg) -> Element style variation msg -> Element style variation msg
+video path style attrs child =
+    Element.video <|
+        el style
+            attrs
+            (node "source" <|
+                el style [ src <| "/assets/" ++ path ] child
+            )
 
 
 styleMap : (style -> parent) -> (variation -> parentVariation) -> Element style variation msg -> Element parent parentVariation msg

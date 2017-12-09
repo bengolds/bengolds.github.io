@@ -1,10 +1,10 @@
 module ProjectIndex exposing (element, styles, Styles)
 
 import Element exposing (Element, text, el, empty, row, wrappedRow, column, link)
-import Element.Attributes exposing (maxWidth, maxHeight, width, height, padding, paddingXY, spacing, px, percent)
+import Element.Attributes exposing (maxWidth, maxHeight, width, height, padding, paddingXY, spacing, px, percent, autoplay, loop, controls, inlineStyle)
 import Style exposing (..)
 import SharedStyles exposing (font, scaledFont, units, pxUnits)
-import ElementHelpers exposing (image)
+import ElementHelpers exposing (image, video)
 import Style.Border as Border
 import Style.Color as Color
 import Color
@@ -57,8 +57,7 @@ styles =
     in
         [ style None []
         , style ImageArea
-            [ Border.right 1
-            ]
+            []
         , style StaticImage
             [ clipTransition
             , hover
@@ -78,10 +77,13 @@ styles =
             ]
         , style Description
             []
+        , style TextArea
+            []
         , style CategoryName
             [ Color.text Color.black
             , scaledFont 1
             ]
+        , style Category []
         ]
 
 
@@ -114,7 +116,7 @@ chip project =
 
 chipImage : Project style variation msg -> Element Styles variation msg
 chipImage project =
-    el ImageArea [ width <| pxUnits 10, height (percent 100) ] empty
+    el ImageArea [ height (percent 100), width <| pxUnits 10 ] empty
         |> Element.within
             [ image project.imageLocation
                 StaticImage
@@ -122,10 +124,14 @@ chipImage project =
                 , height (percent 100)
                 ]
                 empty
-            , image project.clipletLocation
+            , video project.clipletLocation
                 Cliplet
                 [ width (percent 100)
                 , height (percent 100)
+                , autoplay True
+                , loop True
+                , controls False
+                , inlineStyle [ ( "object-fit", "fill" ) ]
                 ]
                 empty
             ]

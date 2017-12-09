@@ -1,15 +1,15 @@
 module Projects.Symmetry exposing (symmetry)
 
-import Project exposing (..)
 import Element exposing (text)
+import Project exposing (..)
 
 
 symmetry : Project style variation msg
 symmetry =
     { title = "Symmetry"
-    , description = "bogus game"
+    , description = "explore the symmetries of tetrahedra"
     , imageLocation = "symmetry.jpg"
     , clipletLocation = ""
-    , url = "symmetry"
+    , url = "https://bengolds.github.io/Symmetry-Explorer/"
     , page = text "symmetry"
     }

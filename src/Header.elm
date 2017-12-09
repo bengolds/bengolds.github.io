@@ -26,15 +26,6 @@ styles =
     , style Top [ font, Color.text Color.black ]
     , style Header
         [ Border.bottom 1
-
-        --, Style.shadows
-        --[ Shadow.box
-        --{ offset = ( 0, 0 )
-        --, size = 6
-        --, blur = 12
-        --, color = Color.rgba 0 0 0 0.25
-        --}
-        --]
         , Color.background Color.white
         ]
     , style Link
@@ -48,6 +39,10 @@ styles =
         ]
     , style Name
         [ Font.bold
+        , Color.text Color.black
+        , pseudo "visited"
+            [ Color.text Color.black
+            ]
         ]
     ]
 
@@ -59,23 +54,24 @@ element =
 
 header : Element Styles variation msg
 header =
-    el Top
-        [ alignTop, width (percent 100) ]
-        (row Header
-            [ paddingXY (units 4) 0
-            , spacing (units 4)
-            , height (pxUnits headerHeight)
-            , verticalCenter
-            , alignLeft
-            , width (percent 100)
-            ]
-            [ name
-            , textLink "Projects" "#/projects"
-            , textLink "About me" "#/about"
-            , textLink "Resumé" "#/resume"
-            ]
-        )
-        |> screen
+    screen <|
+        el Top
+            [ alignTop, width (percent 100) ]
+            (row Header
+                [ paddingXY (units 4) 0
+                , spacing (units 4)
+                , height (pxUnits headerHeight)
+                , verticalCenter
+                , alignLeft
+                , width (percent 100)
+                ]
+                [ name
+                , textLink "Projects" "#/projects"
+                , textLink "About me" "#/about"
+
+                --, textLink "Resumé" "#/resume"
+                ]
+            )
 
 
 spacer : Element Styles variation msg
@@ -90,11 +86,12 @@ headerHeight =
 
 name : Element Styles variation msg
 name =
-    column Name
-        [ alignLeft ]
-        [ el None [] <| text "Ben"
-        , el None [] <| text "Goldsmith"
-        ]
+    link "#/about" <|
+        column Name
+            [ alignLeft ]
+            [ el None [] <| text "Ben"
+            , el None [] <| text "Goldsmith"
+            ]
 
 
 textLink : String -> String -> Element Styles variation msg

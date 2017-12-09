@@ -12562,7 +12562,7 @@ var _mdgriffith$style_elements$Style_Internal_Selector$render = F2(
 			case 'Select':
 				return A2(
 					_elm_lang$core$Basics_ops['++'],
-					'.',
+					'.style-elements .',
 					guard(_p3._0));
 			case 'SelectChild':
 				return A2(
@@ -15940,6 +15940,7 @@ var _mdgriffith$style_elements$Element_Attributes$map = F2(
 				return _mdgriffith$style_elements$Element_Internal_Model$Overflow(_p0._0);
 		}
 	});
+var _mdgriffith$style_elements$Element_Attributes$toAttr = _mdgriffith$style_elements$Element_Internal_Model$Attr;
 var _mdgriffith$style_elements$Element_Attributes$attribute = F2(
 	function (name, val) {
 		return _mdgriffith$style_elements$Element_Internal_Model$Attr(
@@ -17833,9 +17834,9 @@ var _mdgriffith$style_elements$Element_Internal_Render$spacingToMargin = functio
 	};
 	return A2(_elm_lang$core$List$map, spaceToMarg, attrs);
 };
-var _mdgriffith$style_elements$Element_Internal_Render$normalize = 'html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video,hr{margin:0;padding:0;border:0;font-size:100%;font:inherit}html{line-height:1;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:0.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace, monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace, monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=\"button\"],[type=\"reset\"],[type=\"submit\"]{-webkit-appearance:button}button::-moz-focus-inner,[type=\"button\"]::-moz-focus-inner,[type=\"reset\"]::-moz-focus-inner,[type=\"submit\"]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=\"button\"]:-moz-focusring,[type=\"reset\"]:-moz-focusring,[type=\"submit\"]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:0.35em 0.75em 0.625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=\"checkbox\"],[type=\"radio\"]{box-sizing:border-box;padding:0}[type=\"number\"]::-webkit-inner-spin-button,[type=\"number\"]::-webkit-outer-spin-button{height:auto}[type=\"search\"]{-webkit-appearance:textfield;outline-offset:-2px}[type=\"search\"]::-webkit-search-cancel-button,[type=\"search\"]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}em{font-style:italic}strong{font-weight:bold}a{text-decoration:none}input,textarea{border:0}.clearfix:after{content:\"\";display:table;clear:both}';
+var _mdgriffith$style_elements$Element_Internal_Render$qualifiedNormalize = 'html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;margin:0;padding:0;border:0}body{margin:0}.style-elements article,.style-elements aside,.style-elements footer,.style-elements header,.style-elements nav,.style-elements section{display:block}.style-elements h1{font-size:1em;margin:0}.style-elements figcaption,.style-elements figure,.style-elements main{display:block}.style-elements figure{margin:1em 40px}.style-elements hr{box-sizing:content-box;height:0;overflow:visible}.style-elements pre{font-family:monospace, monospace;font-size:1em}.style-elements a{background-color:transparent;-webkit-text-decoration-skip:objects}.style-elements abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}.style-elements b,.style-elements strong{font-weight:inherit}.style-elements b,.style-elements strong{font-weight:bolder}.style-elements code,.style-elements kbd,.style-elements samp{font-family:monospace, monospace;font-size:1em}.style-elements dfn{font-style:italic}.style-elements mark{background-color:#ff0;color:#000}.style-elements small{font-size:80%}.style-elements sub,.style-elements sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}.style-elements sub{bottom:-0.25em}.style-elements sup{top:-0.5em}.style-elements audio,.style-elements video{display:inline-block}.style-elements audio:not([controls]){display:none;height:0}.style-elements img{border-style:none}.style-elements svg:not(:root){overflow:hidden}.style-elements button,.style-elements input,.style-elements optgroup,.style-elements select,.style-elements textarea{font-family:sans-serif;font-size:100%;margin:0}.style-elements button,.style-elements input{overflow:visible}.style-elements button,.style-elements select{text-transform:none}.style-elements button,.style-elements html [type=\"button\"],.style-elements [type=\"reset\"],.style-elements [type=\"submit\"]{-webkit-appearance:button}.style-elements [type=\"button\"]::-moz-focus-inner,.style-elements [type=\"reset\"]::-moz-focus-inner,.style-elements [type=\"submit\"]::-moz-focus-inner,.style-elements button::-moz-focus-inner{border-style:none;padding:0}.style-elements [type=\"button\"]:-moz-focusring,.style-elements [type=\"reset\"]:-moz-focusring,.style-elements [type=\"submit\"]:-moz-focusring,.style-elements button:-moz-focusring{outline:1px dotted ButtonText}.style-elements fieldset{padding:0.35em 0.75em 0.625em}.style-elements legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}.style-elements progress{display:inline-block;vertical-align:baseline}.style-elements textarea{overflow:auto}.style-elements [type=\"checkbox\"],.style-elements [type=\"radio\"]{box-sizing:border-box;padding:0}.style-elements [type=\"number\"]::-webkit-inner-spin-button,.style-elements [type=\"number\"]::-webkit-outer-spin-button{height:auto}.style-elements [type=\"search\"]{-webkit-appearance:textfield;outline-offset:-2px}.style-elements [type=\"search\"]::-webkit-search-cancel-button,.style-elements [type=\"search\"]::-webkit-search-decoration{-webkit-appearance:none}.style-elements::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}.style-elements details,.style-elements menu{display:block}.style-elements summary{display:list-item}.style-elements canvas{display:inline-block}.style-elements template{display:none}.style-elements [hidden]{display:none}.style-elements em{font-style:italic}.style-elements strong{font-weight:bold}.style-elements a{text-decoration:none}.style-elements input,.style-elements textarea{border:0}.style-elements .clearfix:after{content:\"\";display:table;clear:both}.style-elements a,.style-elements abbr,.style-elements acronym,.style-elements address,.style-elements applet,.style-elements article,.style-elements aside,.style-elements audio,.style-elements b,.style-elements big,.style-elements blockquote,.style-elements canvas,.style-elements caption,.style-elements center,.style-elements cite,.style-elements code,.style-elements dd,.style-elements del,.style-elements details,.style-elements dfn,.style-elements div,.style-elements dl,.style-elements dt,.style-elements em,.style-elements embed,.style-elements fieldset,.style-elements figcaption,.style-elements figure,.style-elements footer,.style-elements form,.style-elements h1,.style-elements h2,.style-elements h3,.style-elements h4,.style-elements h5,.style-elements h6,.style-elements header,.style-elements hgroup,.style-elements hr,.style-elements i,.style-elements iframe,.style-elements img,.style-elements ins,.style-elements kbd,.style-elements label,.style-elements legend,.style-elements li,.style-elements mark,.style-elements menu,.style-elements nav,.style-elements object,.style-elements ol,.style-elements output,.style-elements p,.style-elements pre,.style-elements q,.style-elements ruby,.style-elements s,.style-elements samp,.style-elements section,.style-elements small,.style-elements span,.style-elements strike,.style-elements strong,.style-elements sub,.style-elements summary,.style-elements sup,.style-elements table,.style-elements tbody,.style-elements td,.style-elements tfoot,.style-elements th,.style-elements thead,.style-elements time,.style-elements tr,.style-elements tt,.style-elements u,.style-elements ul,.style-elements var,.style-elements video{margin:0;padding:0;border:0;font-size:100%;font:inherit;box-sizing:border-box}.style-elements{margin:0;padding:0;border:0;font-size:100%;font:inherit;line-height:1}';
 var _mdgriffith$style_elements$Element_Internal_Render$normalizeFull = function (_p50) {
-	return A2(_elm_lang$core$Basics_ops['++'], 'html,body{width:100%;height:100%;}', _mdgriffith$style_elements$Element_Internal_Render$normalize);
+	return A2(_elm_lang$core$Basics_ops['++'], 'html,body{width:100%;height:100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;}', _mdgriffith$style_elements$Element_Internal_Render$qualifiedNormalize);
 };
 var _mdgriffith$style_elements$Element_Internal_Render$embed = F2(
 	function (full, stylesheet) {
@@ -17850,10 +17851,11 @@ var _mdgriffith$style_elements$Element_Internal_Render$embed = F2(
 						_elm_lang$core$Basics_ops['++'],
 						_mdgriffith$style_elements$Element_Internal_Render$normalizeFull(
 							{ctor: '_Tuple0'}),
-						stylesheet.css) : A2(_elm_lang$core$Basics_ops['++'], _mdgriffith$style_elements$Element_Internal_Render$normalize, stylesheet.css)),
+						stylesheet.css) : A2(_elm_lang$core$Basics_ops['++'], _mdgriffith$style_elements$Element_Internal_Render$qualifiedNormalize, stylesheet.css)),
 				_1: {ctor: '[]'}
 			});
 	});
+var _mdgriffith$style_elements$Element_Internal_Render$normalize = 'html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video,hr{margin:0;padding:0;border:0;font-size:100%;font:inherit}html{line-height:1;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:0.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace, monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace, monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=\"button\"],[type=\"reset\"],[type=\"submit\"]{-webkit-appearance:button}button::-moz-focus-inner,[type=\"button\"]::-moz-focus-inner,[type=\"reset\"]::-moz-focus-inner,[type=\"submit\"]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=\"button\"]:-moz-focusring,[type=\"reset\"]:-moz-focusring,[type=\"submit\"]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:0.35em 0.75em 0.625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=\"checkbox\"],[type=\"radio\"]{box-sizing:border-box;padding:0}[type=\"number\"]::-webkit-inner-spin-button,[type=\"number\"]::-webkit-outer-spin-button{height:auto}[type=\"search\"]{-webkit-appearance:textfield;outline-offset:-2px}[type=\"search\"]::-webkit-search-cancel-button,[type=\"search\"]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}em{font-style:italic}strong{font-weight:bold}a{text-decoration:none}input,textarea{border:0}.clearfix:after{content:\"\";display:table;clear:both}';
 var _mdgriffith$style_elements$Element_Internal_Render$Parent = F3(
 	function (a, b, c) {
 		return {parentSpecifiedSpacing: a, layout: b, parentPadding: c};
@@ -19510,7 +19512,7 @@ var _mdgriffith$style_elements$Element_Internal_Render$viewport = F2(
 			_elm_lang$html$Html$div,
 			{
 				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('style-elements-root'),
+				_0: _elm_lang$html$Html_Attributes$class('style-elements'),
 				_1: {
 					ctor: '::',
 					_0: _elm_lang$html$Html_Attributes$style(
@@ -19538,7 +19540,7 @@ var _mdgriffith$style_elements$Element_Internal_Render$root = F2(
 			_elm_lang$html$Html$div,
 			{
 				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('style-elements-root'),
+				_0: _elm_lang$html$Html_Attributes$class('style-elements'),
 				_1: {ctor: '[]'}
 			},
 			{
@@ -20408,6 +20410,15 @@ var _mdgriffith$style_elements$Element$when = F2(
 	function (bool, elm) {
 		return bool ? elm : _mdgriffith$style_elements$Element$empty;
 	});
+var _mdgriffith$style_elements$Element$whenJust = F2(
+	function (maybe, view) {
+		var _p35 = maybe;
+		if (_p35.ctor === 'Nothing') {
+			return _mdgriffith$style_elements$Element$empty;
+		} else {
+			return view(_p35._0);
+		}
+	});
 var _mdgriffith$style_elements$Element$screen = function (el) {
 	return A2(
 		_mdgriffith$style_elements$Element$within,
@@ -20887,23 +20898,27 @@ var _mdgriffith$style_elements$Style_Transition$Transition = F4(
 		return {delay: a, duration: b, easing: c, props: d};
 	});
 
-var _user$project$StyleHelpers$scaled = A2(_mdgriffith$style_elements$Style_Scale$modular, 16, 1.618);
-var _user$project$StyleHelpers$scaledFont = function (n) {
+var _user$project$SharedStyles$scaled = A2(
+	_mdgriffith$style_elements$Style_Scale$modular,
+	16,
+	_elm_lang$core$Basics$sqrt(1.618));
+var _user$project$SharedStyles$scaledFont = function (n) {
 	return _mdgriffith$style_elements$Style_Font$size(
-		_user$project$StyleHelpers$scaled(n));
+		_user$project$SharedStyles$scaled(n));
 };
-var _user$project$StyleHelpers$units = function (n) {
-	return _elm_lang$core$Basics$toFloat(n * 8);
+var _user$project$SharedStyles$units = function (n) {
+	var gridUnit = 8;
+	return _elm_lang$core$Basics$toFloat(n * gridUnit);
 };
-var _user$project$StyleHelpers$font = _mdgriffith$style_elements$Style_Font$typeface(
+var _user$project$SharedStyles$pxUnits = function (n) {
+	return _mdgriffith$style_elements$Element_Attributes$px(
+		_user$project$SharedStyles$units(n));
+};
+var _user$project$SharedStyles$font = _mdgriffith$style_elements$Style_Font$typeface(
 	{
 		ctor: '::',
 		_0: 'Oxygen Mono',
-		_1: {
-			ctor: '::',
-			_0: 'Overpass Mono',
-			_1: {ctor: '[]'}
-		}
+		_1: {ctor: '[]'}
 	});
 
 var _user$project$ElementHelpers$mapVariation = F2(
@@ -21012,10 +21027,27 @@ var _user$project$ElementHelpers$styleMap = F3(
 				return _mdgriffith$style_elements$Element_Internal_Model$Raw(_p1._0);
 		}
 	});
-var _user$project$ElementHelpers$pxUnits = function (n) {
-	return _mdgriffith$style_elements$Element_Attributes$px(
-		_user$project$StyleHelpers$units(n));
-};
+var _user$project$ElementHelpers$video = F4(
+	function (path, style, attrs, child) {
+		return _mdgriffith$style_elements$Element$video(
+			A3(
+				_mdgriffith$style_elements$Element$el,
+				style,
+				attrs,
+				A2(
+					_mdgriffith$style_elements$Element$node,
+					'source',
+					A3(
+						_mdgriffith$style_elements$Element$el,
+						style,
+						{
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Element_Attributes$src(
+								A2(_elm_lang$core$Basics_ops['++'], '/assets/', path)),
+							_1: {ctor: '[]'}
+						},
+						child))));
+	});
 var _user$project$ElementHelpers$image = function (path) {
 	return _mdgriffith$style_elements$Element$image(
 		A2(_elm_lang$core$Basics_ops['++'], '/assets/', path));
@@ -21028,19 +21060,19 @@ var _user$project$Project$Project = F6(
 
 var _user$project$Projects_RainbowRacer$rainbowRacer = {
 	title: 'Rainbow Racer',
-	description: 'bogus game',
-	imageLocation: 'rainbowracer.jpg',
-	clipletLocation: '',
+	description: 'doodoo buttstuff',
+	imageLocation: 'rainbowracer.png',
+	clipletLocation: 'rainbowracer.webm',
 	url: 'rainbow-racer',
 	page: _mdgriffith$style_elements$Element$text('rainbow racerrrr')
 };
 
 var _user$project$Projects_Spearmints$spearmints = {
 	title: 'Spearmints',
-	description: 'bogus game',
-	imageLocation: 'spearmints.jpg',
-	clipletLocation: 'spearmints-clip.gif',
-	url: 'spearmints',
+	description: 'room-scale VR escape game',
+	imageLocation: 'spearmints-icon.png',
+	clipletLocation: 'spearmints.webm',
+	url: 'https://spearmints.itch.io/no-1',
 	page: _mdgriffith$style_elements$Element$text('spearmints')
 };
 
@@ -21057,7 +21089,7 @@ var _user$project$Projects_Playbook$playbook = {
 	title: 'Playbook',
 	description: 'bogus game',
 	imageLocation: 'playbook.jpg',
-	clipletLocation: '',
+	clipletLocation: 'playbook.webm',
 	url: 'playbook',
 	page: _mdgriffith$style_elements$Element$text('playbook')
 };
@@ -21152,7 +21184,7 @@ var _user$project$ProjectIndex$chipImage = function (project) {
 			_1: {
 				ctor: '::',
 				_0: A4(
-					_user$project$ElementHelpers$image,
+					_user$project$ElementHelpers$video,
 					project.clipletLocation,
 					_user$project$ProjectIndex$Cliplet,
 					{
@@ -21163,7 +21195,28 @@ var _user$project$ProjectIndex$chipImage = function (project) {
 							ctor: '::',
 							_0: _mdgriffith$style_elements$Element_Attributes$height(
 								_mdgriffith$style_elements$Element_Attributes$percent(100)),
-							_1: {ctor: '[]'}
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element_Attributes$autoplay(true),
+								_1: {
+									ctor: '::',
+									_0: _mdgriffith$style_elements$Element_Attributes$loop(true),
+									_1: {
+										ctor: '::',
+										_0: _mdgriffith$style_elements$Element_Attributes$controls(false),
+										_1: {
+											ctor: '::',
+											_0: _mdgriffith$style_elements$Element_Attributes$inlineStyle(
+												{
+													ctor: '::',
+													_0: {ctor: '_Tuple2', _0: 'object-fit', _1: 'fill'},
+													_1: {ctor: '[]'}
+												}),
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							}
 						}
 					},
 					_mdgriffith$style_elements$Element$empty),
@@ -21175,12 +21228,12 @@ var _user$project$ProjectIndex$chipImage = function (project) {
 			_user$project$ProjectIndex$ImageArea,
 			{
 				ctor: '::',
-				_0: _mdgriffith$style_elements$Element_Attributes$width(
-					_mdgriffith$style_elements$Element_Attributes$px(80)),
+				_0: _mdgriffith$style_elements$Element_Attributes$height(
+					_mdgriffith$style_elements$Element_Attributes$percent(100)),
 				_1: {
 					ctor: '::',
-					_0: _mdgriffith$style_elements$Element_Attributes$height(
-						_mdgriffith$style_elements$Element_Attributes$percent(100)),
+					_0: _mdgriffith$style_elements$Element_Attributes$width(
+						_user$project$SharedStyles$pxUnits(10)),
 					_1: {ctor: '[]'}
 				}
 			},
@@ -21191,21 +21244,22 @@ var _user$project$ProjectIndex$Chip = {ctor: 'Chip'};
 var _user$project$ProjectIndex$chip = function (project) {
 	return A2(
 		_mdgriffith$style_elements$Element$link,
-		A2(_elm_lang$core$Basics_ops['++'], '#/projects/', project.url),
+		project.url,
 		A3(
 			_mdgriffith$style_elements$Element$row,
 			_user$project$ProjectIndex$Chip,
 			{
 				ctor: '::',
 				_0: _mdgriffith$style_elements$Element_Attributes$width(
-					_mdgriffith$style_elements$Element_Attributes$px(320)),
+					_user$project$SharedStyles$pxUnits(40)),
 				_1: {
 					ctor: '::',
 					_0: _mdgriffith$style_elements$Element_Attributes$height(
-						_mdgriffith$style_elements$Element_Attributes$px(80)),
+						_user$project$SharedStyles$pxUnits(10)),
 					_1: {
 						ctor: '::',
-						_0: _mdgriffith$style_elements$Element_Attributes$spacing(8),
+						_0: _mdgriffith$style_elements$Element_Attributes$spacing(
+							_user$project$SharedStyles$units(1)),
 						_1: {ctor: '[]'}
 					}
 				}
@@ -21220,10 +21274,14 @@ var _user$project$ProjectIndex$chip = function (project) {
 						_user$project$ProjectIndex$TextArea,
 						{
 							ctor: '::',
-							_0: A2(_mdgriffith$style_elements$Element_Attributes$paddingXY, 0, 8),
+							_0: A2(
+								_mdgriffith$style_elements$Element_Attributes$paddingXY,
+								0,
+								_user$project$SharedStyles$units(1)),
 							_1: {
 								ctor: '::',
-								_0: _mdgriffith$style_elements$Element_Attributes$spacing(8),
+								_0: _mdgriffith$style_elements$Element_Attributes$spacing(
+									_user$project$SharedStyles$units(1)),
 								_1: {ctor: '[]'}
 							}
 						},
@@ -21276,11 +21334,7 @@ var _user$project$ProjectIndex$styles = function () {
 			_0: A2(
 				_mdgriffith$style_elements$Style$style,
 				_user$project$ProjectIndex$ImageArea,
-				{
-					ctor: '::',
-					_0: _mdgriffith$style_elements$Style_Border$right(1),
-					_1: {ctor: '[]'}
-				}),
+				{ctor: '[]'}),
 			_1: {
 				ctor: '::',
 				_0: A2(
@@ -21343,7 +21397,7 @@ var _user$project$ProjectIndex$styles = function () {
 									_0: _mdgriffith$style_elements$Style_Font$bold,
 									_1: {
 										ctor: '::',
-										_0: _user$project$StyleHelpers$scaledFont(1),
+										_0: _user$project$SharedStyles$scaledFont(1),
 										_1: {ctor: '[]'}
 									}
 								}),
@@ -21357,17 +21411,31 @@ var _user$project$ProjectIndex$styles = function () {
 									ctor: '::',
 									_0: A2(
 										_mdgriffith$style_elements$Style$style,
-										_user$project$ProjectIndex$CategoryName,
-										{
-											ctor: '::',
-											_0: _mdgriffith$style_elements$Style_Color$text(_elm_lang$core$Color$black),
-											_1: {
+										_user$project$ProjectIndex$TextArea,
+										{ctor: '[]'}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_mdgriffith$style_elements$Style$style,
+											_user$project$ProjectIndex$CategoryName,
+											{
 												ctor: '::',
-												_0: _user$project$StyleHelpers$scaledFont(1),
-												_1: {ctor: '[]'}
-											}
-										}),
-									_1: {ctor: '[]'}
+												_0: _mdgriffith$style_elements$Style_Color$text(_elm_lang$core$Color$black),
+												_1: {
+													ctor: '::',
+													_0: _user$project$SharedStyles$scaledFont(1),
+													_1: {ctor: '[]'}
+												}
+											}),
+										_1: {
+											ctor: '::',
+											_0: A2(
+												_mdgriffith$style_elements$Style$style,
+												_user$project$ProjectIndex$Category,
+												{ctor: '[]'}),
+											_1: {ctor: '[]'}
+										}
+									}
 								}
 							}
 						}
@@ -21384,7 +21452,8 @@ var _user$project$ProjectIndex$category = function (_p0) {
 		_user$project$ProjectIndex$Category,
 		{
 			ctor: '::',
-			_0: _mdgriffith$style_elements$Element_Attributes$spacing(16),
+			_0: _mdgriffith$style_elements$Element_Attributes$spacing(
+				_user$project$SharedStyles$units(2)),
 			_1: {ctor: '[]'}
 		},
 		{
@@ -21401,7 +21470,8 @@ var _user$project$ProjectIndex$category = function (_p0) {
 					_user$project$ProjectIndex$None,
 					{
 						ctor: '::',
-						_0: _mdgriffith$style_elements$Element_Attributes$spacing(16),
+						_0: _mdgriffith$style_elements$Element_Attributes$spacing(
+							_user$project$SharedStyles$units(2)),
 						_1: {ctor: '[]'}
 					},
 					A2(_elm_lang$core$List$map, _user$project$ProjectIndex$chip, _p1._1)),
@@ -21414,12 +21484,9 @@ var _user$project$ProjectIndex$element = A3(
 	_user$project$ProjectIndex$None,
 	{
 		ctor: '::',
-		_0: _mdgriffith$style_elements$Element_Attributes$padding(16),
-		_1: {
-			ctor: '::',
-			_0: _mdgriffith$style_elements$Element_Attributes$spacing(32),
-			_1: {ctor: '[]'}
-		}
+		_0: _mdgriffith$style_elements$Element_Attributes$spacing(
+			_user$project$SharedStyles$units(4)),
+		_1: {ctor: '[]'}
 	},
 	A2(_elm_lang$core$List$map, _user$project$ProjectIndex$category, _user$project$ProjectIndex$categories));
 
@@ -21492,7 +21559,7 @@ var _user$project$Reading$element = function (book) {
 			}));
 };
 
-var _user$project$Header$headerHeight = 80;
+var _user$project$Header$headerHeight = 10;
 var _user$project$Header$Name = {ctor: 'Name'};
 var _user$project$Header$Link = {ctor: 'Link'};
 var _user$project$Header$textLink = F2(
@@ -21522,7 +21589,7 @@ var _user$project$Header$styles = {
 			_user$project$Header$Top,
 			{
 				ctor: '::',
-				_0: _user$project$StyleHelpers$font,
+				_0: _user$project$SharedStyles$font,
 				_1: {
 					ctor: '::',
 					_0: _mdgriffith$style_elements$Style_Color$text(_elm_lang$core$Color$black),
@@ -21536,7 +21603,7 @@ var _user$project$Header$styles = {
 				_user$project$Header$Header,
 				{
 					ctor: '::',
-					_0: _mdgriffith$style_elements$Style_Border$bottom(2),
+					_0: _mdgriffith$style_elements$Style_Border$bottom(1),
 					_1: {
 						ctor: '::',
 						_0: _mdgriffith$style_elements$Style_Color$background(_elm_lang$core$Color$white),
@@ -21550,23 +21617,27 @@ var _user$project$Header$styles = {
 					_user$project$Header$Link,
 					{
 						ctor: '::',
-						_0: _mdgriffith$style_elements$Style$hover(
-							{
-								ctor: '::',
-								_0: _mdgriffith$style_elements$Style_Color$background(_elm_lang$core$Color$gray),
-								_1: {ctor: '[]'}
-							}),
+						_0: _mdgriffith$style_elements$Style_Color$text(_elm_lang$core$Color$darkCharcoal),
 						_1: {
 							ctor: '::',
-							_0: A2(
-								_mdgriffith$style_elements$Style$pseudo,
-								'visited',
+							_0: _mdgriffith$style_elements$Style$hover(
 								{
 									ctor: '::',
-									_0: _mdgriffith$style_elements$Style_Color$text(_elm_lang$core$Color$black),
+									_0: _mdgriffith$style_elements$Style_Color$background(_elm_lang$core$Color$gray),
 									_1: {ctor: '[]'}
 								}),
-							_1: {ctor: '[]'}
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_mdgriffith$style_elements$Style$pseudo,
+									'visited',
+									{
+										ctor: '::',
+										_0: _mdgriffith$style_elements$Style_Color$text(_elm_lang$core$Color$darkCharcoal),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}
 						}
 					}),
 				_1: {
@@ -21577,7 +21648,22 @@ var _user$project$Header$styles = {
 						{
 							ctor: '::',
 							_0: _mdgriffith$style_elements$Style_Font$bold,
-							_1: {ctor: '[]'}
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Style_Color$text(_elm_lang$core$Color$black),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_mdgriffith$style_elements$Style$pseudo,
+										'visited',
+										{
+											ctor: '::',
+											_0: _mdgriffith$style_elements$Style_Color$text(_elm_lang$core$Color$black),
+											_1: {ctor: '[]'}
+										}),
+									_1: {ctor: '[]'}
+								}
+							}
 						}),
 					_1: {ctor: '[]'}
 				}
@@ -21591,35 +21677,38 @@ var _user$project$Header$spacer = A3(
 	{
 		ctor: '::',
 		_0: _mdgriffith$style_elements$Element_Attributes$height(
-			_mdgriffith$style_elements$Element_Attributes$px(_user$project$Header$headerHeight + 16)),
+			_user$project$SharedStyles$pxUnits(_user$project$Header$headerHeight)),
 		_1: {ctor: '[]'}
 	},
 	_mdgriffith$style_elements$Element$empty);
-var _user$project$Header$name = A3(
-	_mdgriffith$style_elements$Element$column,
-	_user$project$Header$Name,
-	{
-		ctor: '::',
-		_0: _mdgriffith$style_elements$Element_Attributes$alignLeft,
-		_1: {ctor: '[]'}
-	},
-	{
-		ctor: '::',
-		_0: A3(
-			_mdgriffith$style_elements$Element$el,
-			_user$project$Header$None,
-			{ctor: '[]'},
-			_mdgriffith$style_elements$Element$text('Ben')),
-		_1: {
+var _user$project$Header$name = A2(
+	_mdgriffith$style_elements$Element$link,
+	'#/about',
+	A3(
+		_mdgriffith$style_elements$Element$column,
+		_user$project$Header$Name,
+		{
+			ctor: '::',
+			_0: _mdgriffith$style_elements$Element_Attributes$alignLeft,
+			_1: {ctor: '[]'}
+		},
+		{
 			ctor: '::',
 			_0: A3(
 				_mdgriffith$style_elements$Element$el,
 				_user$project$Header$None,
 				{ctor: '[]'},
-				_mdgriffith$style_elements$Element$text('Goldsmith')),
-			_1: {ctor: '[]'}
-		}
-	});
+				_mdgriffith$style_elements$Element$text('Ben')),
+			_1: {
+				ctor: '::',
+				_0: A3(
+					_mdgriffith$style_elements$Element$el,
+					_user$project$Header$None,
+					{ctor: '[]'},
+					_mdgriffith$style_elements$Element$text('Goldsmith')),
+				_1: {ctor: '[]'}
+			}
+		}));
 var _user$project$Header$header = _mdgriffith$style_elements$Element$screen(
 	A3(
 		_mdgriffith$style_elements$Element$el,
@@ -21639,21 +21728,30 @@ var _user$project$Header$header = _mdgriffith$style_elements$Element$screen(
 			_user$project$Header$Header,
 			{
 				ctor: '::',
-				_0: _mdgriffith$style_elements$Element_Attributes$padding(16),
+				_0: A2(
+					_mdgriffith$style_elements$Element_Attributes$paddingXY,
+					_user$project$SharedStyles$units(4),
+					0),
 				_1: {
 					ctor: '::',
-					_0: _mdgriffith$style_elements$Element_Attributes$spacing(32),
+					_0: _mdgriffith$style_elements$Element_Attributes$spacing(
+						_user$project$SharedStyles$units(4)),
 					_1: {
 						ctor: '::',
-						_0: _mdgriffith$style_elements$Element_Attributes$verticalCenter,
+						_0: _mdgriffith$style_elements$Element_Attributes$height(
+							_user$project$SharedStyles$pxUnits(_user$project$Header$headerHeight)),
 						_1: {
 							ctor: '::',
-							_0: _mdgriffith$style_elements$Element_Attributes$alignLeft,
+							_0: _mdgriffith$style_elements$Element_Attributes$verticalCenter,
 							_1: {
 								ctor: '::',
-								_0: _mdgriffith$style_elements$Element_Attributes$width(
-									_mdgriffith$style_elements$Element_Attributes$percent(100)),
-								_1: {ctor: '[]'}
+								_0: _mdgriffith$style_elements$Element_Attributes$alignLeft,
+								_1: {
+									ctor: '::',
+									_0: _mdgriffith$style_elements$Element_Attributes$width(
+										_mdgriffith$style_elements$Element_Attributes$percent(100)),
+									_1: {ctor: '[]'}
+								}
 							}
 						}
 					}
@@ -21668,11 +21766,7 @@ var _user$project$Header$header = _mdgriffith$style_elements$Element$screen(
 					_1: {
 						ctor: '::',
 						_0: A2(_user$project$Header$textLink, 'About me', '#/about'),
-						_1: {
-							ctor: '::',
-							_0: A2(_user$project$Header$textLink, 'Resumé', '#/resume'),
-							_1: {ctor: '[]'}
-						}
+						_1: {ctor: '[]'}
 					}
 				}
 			})));
@@ -21690,33 +21784,34 @@ var _user$project$Header$element = A3(
 		}
 	});
 
-var _user$project$SharedStyles$ProjectIndexStyle = function (a) {
+var _user$project$Stylesheet$ProjectIndexStyle = function (a) {
 	return {ctor: 'ProjectIndexStyle', _0: a};
 };
-var _user$project$SharedStyles$HeaderStyle = function (a) {
+var _user$project$Stylesheet$HeaderStyle = function (a) {
 	return {ctor: 'HeaderStyle', _0: a};
 };
-var _user$project$SharedStyles$BodyText = {ctor: 'BodyText'};
-var _user$project$SharedStyles$Top = {ctor: 'Top'};
-var _user$project$SharedStyles$None = {ctor: 'None'};
-var _user$project$SharedStyles$stylesheet = _mdgriffith$style_elements$Style$stylesheet(
+var _user$project$Stylesheet$BodyText = {ctor: 'BodyText'};
+var _user$project$Stylesheet$Label = {ctor: 'Label'};
+var _user$project$Stylesheet$Top = {ctor: 'Top'};
+var _user$project$Stylesheet$None = {ctor: 'None'};
+var _user$project$Stylesheet$stylesheet = _mdgriffith$style_elements$Style$stylesheet(
 	{
 		ctor: '::',
 		_0: A2(
 			_mdgriffith$style_elements$Style$style,
-			_user$project$SharedStyles$None,
+			_user$project$Stylesheet$None,
 			{ctor: '[]'}),
 		_1: {
 			ctor: '::',
 			_0: A2(
 				_mdgriffith$style_elements$Style$style,
-				_user$project$SharedStyles$Top,
+				_user$project$Stylesheet$Top,
 				{
 					ctor: '::',
-					_0: _user$project$StyleHelpers$font,
+					_0: _user$project$SharedStyles$font,
 					_1: {
 						ctor: '::',
-						_0: _mdgriffith$style_elements$Style_Color$text(_elm_lang$core$Color$darkGray),
+						_0: _mdgriffith$style_elements$Style_Color$text(_elm_lang$core$Color$darkCharcoal),
 						_1: {ctor: '[]'}
 					}
 				}),
@@ -21724,69 +21819,142 @@ var _user$project$SharedStyles$stylesheet = _mdgriffith$style_elements$Style$sty
 				ctor: '::',
 				_0: A2(
 					_mdgriffith$style_elements$Style$style,
-					_user$project$SharedStyles$BodyText,
-					{ctor: '[]'}),
+					_user$project$Stylesheet$Label,
+					{
+						ctor: '::',
+						_0: _mdgriffith$style_elements$Style_Color$text(_elm_lang$core$Color$black),
+						_1: {
+							ctor: '::',
+							_0: _user$project$SharedStyles$scaledFont(2),
+							_1: {ctor: '[]'}
+						}
+					}),
 				_1: {
 					ctor: '::',
-					_0: _mdgriffith$style_elements$Style_Sheet$merge(
-						A3(_mdgriffith$style_elements$Style_Sheet$map, _user$project$SharedStyles$HeaderStyle, _elm_lang$core$Basics$identity, _user$project$Header$styles)),
+					_0: A2(
+						_mdgriffith$style_elements$Style$style,
+						_user$project$Stylesheet$BodyText,
+						{
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Style_Font$lineHeight(1.2),
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Style_Font$typeface(
+									{
+										ctor: '::',
+										_0: 'Oxygen',
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}
+						}),
 					_1: {
 						ctor: '::',
 						_0: _mdgriffith$style_elements$Style_Sheet$merge(
-							A3(_mdgriffith$style_elements$Style_Sheet$map, _user$project$SharedStyles$ProjectIndexStyle, _elm_lang$core$Basics$identity, _user$project$ProjectIndex$styles)),
-						_1: {ctor: '[]'}
+							A3(_mdgriffith$style_elements$Style_Sheet$map, _user$project$Stylesheet$HeaderStyle, _elm_lang$core$Basics$identity, _user$project$Header$styles)),
+						_1: {
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Style_Sheet$merge(
+								A3(_mdgriffith$style_elements$Style_Sheet$map, _user$project$Stylesheet$ProjectIndexStyle, _elm_lang$core$Basics$identity, _user$project$ProjectIndex$styles)),
+							_1: {ctor: '[]'}
+						}
 					}
 				}
 			}
 		}
 	});
 
-var _user$project$About$element = A3(
-	_mdgriffith$style_elements$Element$textLayout,
-	_user$project$SharedStyles$None,
-	{ctor: '[]'},
-	{
-		ctor: '::',
-		_0: A3(
-			_mdgriffith$style_elements$Element$el,
-			_user$project$SharedStyles$None,
+var _user$project$About$element = function () {
+	var paragraph = function (string) {
+		return A3(
+			_mdgriffith$style_elements$Element$paragraph,
+			_user$project$Stylesheet$BodyText,
 			{ctor: '[]'},
-			A4(
-				_user$project$ElementHelpers$image,
-				'headshot.jpg',
-				_user$project$SharedStyles$None,
-				{
+			{
+				ctor: '::',
+				_0: _mdgriffith$style_elements$Element$text(string),
+				_1: {ctor: '[]'}
+			});
+	};
+	return A3(
+		_mdgriffith$style_elements$Element$el,
+		_user$project$Stylesheet$None,
+		{
+			ctor: '::',
+			_0: _mdgriffith$style_elements$Element_Attributes$alignLeft,
+			_1: {ctor: '[]'}
+		},
+		A3(
+			_mdgriffith$style_elements$Element$textLayout,
+			_user$project$Stylesheet$None,
+			{
+				ctor: '::',
+				_0: A2(
+					_mdgriffith$style_elements$Element_Attributes$spacingXY,
+					_user$project$SharedStyles$units(2),
+					_user$project$SharedStyles$units(2)),
+				_1: {
 					ctor: '::',
-					_0: _mdgriffith$style_elements$Element_Attributes$width(
-						_user$project$ElementHelpers$pxUnits(20)),
+					_0: _mdgriffith$style_elements$Element_Attributes$maxWidth(
+						_user$project$SharedStyles$pxUnits(80)),
+					_1: {ctor: '[]'}
+				}
+			},
+			{
+				ctor: '::',
+				_0: A3(
+					_mdgriffith$style_elements$Element$el,
+					_user$project$Stylesheet$None,
+					{
+						ctor: '::',
+						_0: _mdgriffith$style_elements$Element_Attributes$alignRight,
+						_1: {ctor: '[]'}
+					},
+					A4(
+						_user$project$ElementHelpers$image,
+						'headshot.jpg',
+						_user$project$Stylesheet$None,
+						{
+							ctor: '::',
+							_0: _mdgriffith$style_elements$Element_Attributes$width(
+								_user$project$SharedStyles$pxUnits(20)),
+							_1: {
+								ctor: '::',
+								_0: _mdgriffith$style_elements$Element_Attributes$height(
+									_user$project$SharedStyles$pxUnits(20)),
+								_1: {ctor: '[]'}
+							}
+						},
+						_mdgriffith$style_elements$Element$empty)),
+				_1: {
+					ctor: '::',
+					_0: A3(
+						_mdgriffith$style_elements$Element$el,
+						_user$project$Stylesheet$Label,
+						{ctor: '[]'},
+						_mdgriffith$style_elements$Element$text('About me')),
 					_1: {
 						ctor: '::',
-						_0: _mdgriffith$style_elements$Element_Attributes$height(
-							_user$project$ElementHelpers$pxUnits(20)),
-						_1: {ctor: '[]'}
+						_0: paragraph('I live for the feeling of a system coming alive in my mind. What was once a set of impenetrable symbols becomes a lens through which the whole world looks different.'),
+						_1: {
+							ctor: '::',
+							_0: paragraph('Mathematics gives us the language and mindset to probe the world. Interactive visualizations bring those findings to life. Game development engages our whole body and brain to embed these systems in our bones.'),
+							_1: {
+								ctor: '::',
+								_0: paragraph('While at University, I learned how to make whatever I imagined come alive on a screen. At Pixar, I learned how to build tools to translate from the inner vision to the outer world. And at Google, I learned how to help people work together to bring their visions to life. Now, I\'d like to discover new ways to see the world and give those lenses to everyone.'),
+								_1: {ctor: '[]'}
+							}
+						}
 					}
-				},
-				_mdgriffith$style_elements$Element$empty)),
-		_1: {
-			ctor: '::',
-			_0: A3(
-				_mdgriffith$style_elements$Element$paragraph,
-				_user$project$SharedStyles$None,
-				{ctor: '[]'},
-				{
-					ctor: '::',
-					_0: _mdgriffith$style_elements$Element$text('\n            - Learn by intuition first, rigor second\n            - Technology probing the world and ourselves\n            - Game development as a way to explore systems with your whole body and mind.\n            - At Google, I learned how to organize teams to get things done.\n            - At Pixar, I learned how to build tools for art.\n            - At university, I learned how to make screens come alive with visuals.\n            - The feeling when a system comes alive -- no longer impenetrable symbols, but a feeling in your bones. A new way to see old things.\n            '),
-					_1: {ctor: '[]'}
-				}),
-			_1: {ctor: '[]'}
-		}
-	});
+				}
+			}));
+}();
 
 var _user$project$Page$toElement = function (page) {
 	var _p0 = page;
 	switch (_p0.ctor) {
 		case 'ProjectIndexPage':
-			return A3(_user$project$ElementHelpers$styleMap, _user$project$SharedStyles$ProjectIndexStyle, _elm_lang$core$Basics$identity, _user$project$ProjectIndex$element);
+			return A3(_user$project$ElementHelpers$styleMap, _user$project$Stylesheet$ProjectIndexStyle, _elm_lang$core$Basics$identity, _user$project$ProjectIndex$element);
 		case 'AboutPage':
 			return _user$project$About$element;
 		default:
@@ -21870,7 +22038,7 @@ var _user$project$Main$view = function (model) {
 					_0: _elm_lang$html$Html_Attributes$rel('stylesheet'),
 					_1: {
 						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$href('https://fonts.googleapis.com/css?family=Overpass+Mono|Oxygen+Mono'),
+						_0: _elm_lang$html$Html_Attributes$href('https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono'),
 						_1: {ctor: '[]'}
 					}
 				},
@@ -21879,21 +22047,32 @@ var _user$project$Main$view = function (model) {
 				ctor: '::',
 				_0: A2(
 					_mdgriffith$style_elements$Element$layout,
-					_user$project$SharedStyles$stylesheet,
+					_user$project$Stylesheet$stylesheet,
 					A3(
 						_mdgriffith$style_elements$Element$el,
-						_user$project$SharedStyles$Top,
+						_user$project$Stylesheet$Top,
 						{ctor: '[]'},
 						A3(
 							_mdgriffith$style_elements$Element$column,
-							_user$project$SharedStyles$None,
+							_user$project$Stylesheet$None,
 							{ctor: '[]'},
 							{
 								ctor: '::',
-								_0: A3(_user$project$ElementHelpers$styleMap, _user$project$SharedStyles$HeaderStyle, _elm_lang$core$Basics$identity, _user$project$Header$element),
+								_0: A3(_user$project$ElementHelpers$styleMap, _user$project$Stylesheet$HeaderStyle, _elm_lang$core$Basics$identity, _user$project$Header$element),
 								_1: {
 									ctor: '::',
-									_0: _user$project$Page$toElement(model.page),
+									_0: A3(
+										_mdgriffith$style_elements$Element$el,
+										_user$project$Stylesheet$None,
+										{
+											ctor: '::',
+											_0: A2(
+												_mdgriffith$style_elements$Element_Attributes$paddingXY,
+												_user$project$SharedStyles$units(4),
+												_user$project$SharedStyles$units(2)),
+											_1: {ctor: '[]'}
+										},
+										_user$project$Page$toElement(model.page)),
 									_1: {ctor: '[]'}
 								}
 							}))),

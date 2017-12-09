@@ -1,16 +1,16 @@
 module Main exposing (..)
 
-import Html exposing (..)
-import Html.Attributes exposing (rel, href)
-import Header
-import ElementHelpers exposing (..)
-import Stylesheet exposing (stylesheet, Styles(..))
-import SharedStyles exposing (units)
 import Element exposing (el, empty)
 import Element.Attributes exposing (paddingXY)
+import ElementHelpers exposing (..)
+import Header
+import Html exposing (..)
+import Html.Attributes exposing (href, rel)
 import Navigation exposing (Location)
 import Page exposing (Page, fromLocation)
 import Reading exposing (Book)
+import SharedStyles exposing (units)
+import Stylesheet exposing (Styles(..), stylesheet)
 
 
 --main : Program Never Model Msg
@@ -21,7 +21,7 @@ main =
         { init = init
         , view = view
         , update = update
-        , subscriptions = (\_ -> Sub.none)
+        , subscriptions = \_ -> Sub.none
         }
 
 

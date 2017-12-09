@@ -7,9 +7,9 @@ import Element exposing (text)
 rainbowRacer : Project style variation msg
 rainbowRacer =
     { title = "Rainbow Racer"
-    , description = "bogus game"
-    , imageLocation = "rainbowracer.jpg"
-    , clipletLocation = ""
+    , description = "adrenalized arcade game"
+    , imageLocation = "rainbowracer.png"
+    , clipletLocation = "rainbowracer.webm"
     , url = "rainbow-racer"
     , page = text "rainbow racerrrr"
     }
