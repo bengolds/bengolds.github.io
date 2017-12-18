@@ -1,14 +1,13 @@
-module Page exposing (fromLocation, Page(..), toElement)
+module Page exposing (Page(..), fromLocation, toElement)
 
-import Html exposing (Html)
-import Element exposing (Element, el, empty, text)
-import UrlParser exposing ((</>), s, string, map, oneOf, top, parseHash)
-import Navigation exposing (Location)
-import Style
-import ElementHelpers exposing (styleMap)
-import Stylesheet exposing (Styles(..))
-import ProjectIndex
 import About
+import Element exposing (Element, el, empty, text)
+import ElementHelpers exposing (styleMap)
+import Msg exposing (Msg(..))
+import Navigation exposing (Location)
+import ProjectIndex
+import Stylesheet exposing (Styles(..))
+import UrlParser exposing ((</>), map, oneOf, parseHash, s, string, top)
 
 
 type Page
@@ -50,7 +49,7 @@ fakeLocation path =
     }
 
 
-toElement : Page -> Element Styles variation msg
+toElement : Page -> Element Styles variation Msg
 toElement page =
     case page of
         ProjectIndexPage ->

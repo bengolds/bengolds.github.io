@@ -1,15 +1,15 @@
 module Projects.RainbowRacer exposing (rainbowRacer)
 
-import Project exposing (..)
 import Element exposing (text)
+import Project exposing (..)
 
 
-rainbowRacer : Project style variation msg
+rainbowRacer : Project
 rainbowRacer =
     { title = "Rainbow Racer"
+    , id = "rainbow-racer"
     , description = "adrenalized arcade game"
     , imageLocation = "rainbowracer.png"
     , clipletLocation = "rainbowracer.webm"
     , url = "rainbow-racer"
-    , page = text "rainbow racerrrr"
     }

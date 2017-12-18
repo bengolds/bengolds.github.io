@@ -1,4 +1,4 @@
-module Main exposing (..)
+port module Main exposing (..)
 
 import Element exposing (el, empty)
 import Element.Attributes exposing (paddingXY)
@@ -6,6 +6,8 @@ import ElementHelpers exposing (..)
 import Header
 import Html exposing (..)
 import Html.Attributes exposing (href, rel)
+import Json.Encode
+import Msg exposing (Msg(..))
 import Navigation exposing (Location)
 import Page exposing (Page, fromLocation)
 import Reading exposing (Book)
@@ -48,11 +50,6 @@ type alias Model =
 -- UPDATE
 
 
-type Msg
-    = UrlChange Location
-    | BookReceived (Result String Book)
-
-
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
@@ -66,6 +63,27 @@ update msg model =
 
         BookReceived bookResult ->
             ( { model | currentlyReading = bookResult }, Cmd.none )
+
+        ResetCliplet name ->
+            ( model, sendInfoOut (ResetClipletOut name) )
+
+
+type alias GenericOutsideData =
+    { tag : String, data : Json.Encode.Value }
+
+
+type InfoForOutside
+    = ResetClipletOut String
+
+
+port outport : GenericOutsideData -> Cmd msg
+
+
+sendInfoOut : InfoForOutside -> Cmd Msg
+sendInfoOut info =
+    case info of
+        ResetClipletOut name ->
+            outport { tag = "ResetCliplet", data = Json.Encode.string name }
 
 
 
@@ -81,8 +99,8 @@ view model =
                 []
                 (Element.column None
                     []
-                    [ styleMap HeaderStyle identity Header.element
-                    , el None [ paddingXY (units 4) (units 2) ] <| Page.toElement model.page
+                    --[ styleMap HeaderStyle identity Header.element
+                    [ el None [ paddingXY (units 4) (units 2) ] <| Page.toElement model.page
                     ]
                 )
             )

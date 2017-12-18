@@ -1,32 +1,34 @@
-module ProjectIndex exposing (element, styles, Styles)
+module ProjectIndex exposing (Styles, element, styles)
 
-import Element exposing (Element, text, el, empty, row, wrappedRow, column, link)
-import Element.Attributes exposing (maxWidth, maxHeight, width, height, padding, paddingXY, spacing, px, percent, autoplay, loop, controls, inlineStyle)
-import Style exposing (..)
-import SharedStyles exposing (font, scaledFont, units, pxUnits)
-import ElementHelpers exposing (image, video)
-import Style.Border as Border
-import Style.Color as Color
 import Color
-import Style.Font as Font
-import Style.Transition as Transition
+import Element exposing (Element, column, el, empty, link, row, text, wrappedRow)
+import Element.Attributes exposing (autoplay, controls, height, id, inlineStyle, loop, maxHeight, maxWidth, padding, paddingXY, percent, px, spacing, width)
+import Element.Events exposing (onMouseEnter)
+import ElementHelpers exposing (image, video)
+import Msg exposing (Msg(..))
 import Project exposing (Project)
+import Projects.Playbook exposing (playbook)
+import Projects.Prototypes exposing (prototypes)
+import Projects.Quillbox exposing (quillbox)
 import Projects.RainbowRacer exposing (rainbowRacer)
 import Projects.Spearmints exposing (spearmints)
-import Projects.Prototypes exposing (prototypes)
-import Projects.Playbook exposing (playbook)
-import Projects.Quillbox exposing (quillbox)
 import Projects.Symmetry exposing (symmetry)
+import SharedStyles exposing (font, pxUnits, scaledFont, units)
+import Style exposing (..)
+import Style.Border as Border
+import Style.Color as Color
+import Style.Font as Font
+import Style.Transition as Transition
 
 
-type alias Category style variation msg =
-    ( String, List (Project style variation msg) )
+type alias Category =
+    ( String, List Project )
 
 
-categories : List (Category style variation msg)
+categories : List Category
 categories =
     [ ( "Games", [ spearmints, rainbowRacer, prototypes ] )
-    , ( "Software", [ playbook, quillbox, symmetry ] )
+    , ( "Software", [ playbook, symmetry ] )
     ]
 
 
@@ -55,44 +57,44 @@ styles =
                   }
                 ]
     in
-        [ style None []
-        , style ImageArea
-            []
-        , style StaticImage
-            [ clipTransition
-            , hover
-                [ opacity 0
-                ]
+    [ style None []
+    , style ImageArea
+        []
+    , style StaticImage
+        [ clipTransition
+        , hover
+            [ opacity 0
             ]
-        , style Cliplet []
-        , style Chip
-            [ Border.all 1
-            , Color.text Color.black
-            , Color.border Color.black
-            , hover [ Border.dashed ]
-            ]
-        , style Title
-            [ Font.bold
-            , scaledFont 1
-            ]
-        , style Description
-            []
-        , style TextArea
-            []
-        , style CategoryName
-            [ Color.text Color.black
-            , scaledFont 1
-            ]
-        , style Category []
         ]
+    , style Cliplet []
+    , style Chip
+        [ Border.all 1
+        , Color.text Color.black
+        , Color.border Color.black
+        , hover [ Border.dashed ]
+        ]
+    , style Title
+        [ Font.bold
+        , scaledFont 1
+        ]
+    , style Description
+        []
+    , style TextArea
+        []
+    , style CategoryName
+        [ Color.text Color.black
+        , scaledFont 1
+        ]
+    , style Category []
+    ]
 
 
-element : Element Styles variation msg
+element : Element Styles variation Msg
 element =
     column None [ spacing <| units 4 ] (List.map category categories)
 
 
-category : Category style variation msg -> Element Styles variation msg
+category : Category -> Element Styles variation Msg
 category ( title, projects ) =
     column Category [ spacing <| units 2 ] <|
         [ el CategoryName [] (text title)
@@ -100,11 +102,15 @@ category ( title, projects ) =
         ]
 
 
-chip : Project style variation msg -> Element Styles variation msg
+chip : Project -> Element Styles variation Msg
 chip project =
-    link (project.url) <|
+    link project.url <|
         row Chip
-            [ width <| pxUnits 40, height <| pxUnits 10, spacing <| units 1 ]
+            [ width <| pxUnits 40
+            , height <| pxUnits 10
+            , spacing <| units 1
+            , id project.id
+            ]
             [ chipImage project
             , column TextArea
                 [ paddingXY 0 (units 1), spacing <| units 1 ]
@@ -114,9 +120,18 @@ chip project =
             ]
 
 
-chipImage : Project style variation msg -> Element Styles variation msg
+chipImage : Project -> Element Styles variation Msg
 chipImage project =
-    el ImageArea [ height (percent 100), width <| pxUnits 10 ] empty
+    let
+        videoId =
+            project.id ++ "-cliplet"
+    in
+    el ImageArea
+        [ height (percent 100)
+        , width <| pxUnits 10
+        , onMouseEnter (ResetCliplet videoId)
+        ]
+        empty
         |> Element.within
             [ image project.imageLocation
                 StaticImage
@@ -132,6 +147,7 @@ chipImage project =
                 , loop True
                 , controls False
                 , inlineStyle [ ( "object-fit", "fill" ) ]
+                , id videoId
                 ]
                 empty
             ]

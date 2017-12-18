@@ -4,12 +4,12 @@ import Element exposing (text)
 import Project exposing (..)
 
 
-symmetry : Project style variation msg
+symmetry : Project
 symmetry =
     { title = "Symmetry"
+    , id = "symmetry"
     , description = "explore the symmetries of tetrahedra"
-    , imageLocation = "symmetry.jpg"
-    , clipletLocation = ""
+    , imageLocation = "symmetry-icon.png"
+    , clipletLocation = "symmetry-clip.webm"
     , url = "https://bengolds.github.io/Symmetry-Explorer/"
-    , page = text "symmetry"
     }
