@@ -99,8 +99,8 @@ view model =
                 []
                 (Element.column None
                     []
-                    --[ styleMap HeaderStyle identity Header.element
-                    [ el None [ paddingXY (units 4) (units 2) ] <| Page.toElement model.page
+                    [ styleMap HeaderStyle identity Header.element
+                    , el None [ paddingXY (units 4) (units 2) ] <| Page.toElement model.page
                     ]
                 )
             )

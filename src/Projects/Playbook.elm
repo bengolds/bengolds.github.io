@@ -11,5 +11,5 @@ playbook =
     , description = "raising math from the dead"
     , imageLocation = "playbook.png"
     , clipletLocation = "playbook.webm"
-    , url = "playbook"
+    , url = "https://www.youtube.com/watch?v=ccBRIswpMzM"
     }

@@ -8,8 +8,8 @@ prototypes : Project
 prototypes =
     { title = "Prototypes"
     , id = "prototypes"
-    , description = "bogus game"
-    , imageLocation = "prototypes.jpg"
-    , clipletLocation = ""
-    , url = "prototypes"
+    , description = "games that were not to be"
+    , imageLocation = "exquisine-icon.png"
+    , clipletLocation = "exquisine-cliplet.webm"
+    , url = "#/prototypes"
     }

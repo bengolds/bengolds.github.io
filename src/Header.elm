@@ -1,15 +1,15 @@
 module Header exposing (..)
 
-import Element exposing (Element, el, column, row, image, link, text, empty, screen)
-import Element.Attributes exposing (..)
-import Style exposing (..)
-import SharedStyles exposing (font, units, pxUnits)
-import Style.Border as Border
-import Style.Font as Font
-import Style.Color as Color
-import Style.Shadow as Shadow
 import Color
+import Element exposing (Element, column, el, empty, image, link, row, screen, text)
+import Element.Attributes exposing (..)
 import Reading
+import SharedStyles exposing (font, pxUnits, units)
+import Style exposing (..)
+import Style.Border as Border
+import Style.Color as Color
+import Style.Font as Font
+import Style.Shadow as Shadow
 
 
 type Styles
@@ -57,19 +57,21 @@ header =
     screen <|
         el Top
             [ alignTop, width (percent 100) ]
-            (row Header
-                [ paddingXY (units 4) 0
-                , spacing (units 4)
-                , height (pxUnits headerHeight)
-                , verticalCenter
-                , alignLeft
-                , width (percent 100)
-                ]
-                [ name
-                , textLink "Projects" "#/projects"
-                , textLink "About me" "#/about"
+            (row None [] <|
+                [ row Header
+                    [ paddingXY (units 4) 0
+                    , spacing (units 4)
+                    , height (pxUnits headerHeight)
+                    , alignLeft
+                    , verticalCenter
+                    , width (percent 100)
+                    ]
+                    [ name
+                    , textLink "Projects" "#/projects"
+                    , textLink "About me" "#/about"
 
-                --, textLink "Resumé" "#/resume"
+                    --, textLink "Resumé" "#/resume"
+                    ]
                 ]
             )
 

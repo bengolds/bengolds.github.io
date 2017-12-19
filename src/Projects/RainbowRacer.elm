@@ -1,6 +1,5 @@
 module Projects.RainbowRacer exposing (rainbowRacer)
 
-import Element exposing (text)
 import Project exposing (..)
 
 
@@ -11,5 +10,5 @@ rainbowRacer =
     , description = "adrenalized arcade game"
     , imageLocation = "rainbowracer.png"
     , clipletLocation = "rainbowracer.webm"
-    , url = "rainbow-racer"
+    , url = "https://www.youtube.com/watch?v=2I4rqRBQX44"
     }
