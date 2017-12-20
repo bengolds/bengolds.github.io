@@ -1,4 +1,4 @@
-module ProjectIndex exposing (Styles, element, styles)
+module Pages.ProjectIndex exposing (Styles, element, styles)
 
 import Color
 import Element exposing (Element, column, el, empty, link, row, text, wrappedRow)

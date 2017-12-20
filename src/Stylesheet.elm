@@ -1,13 +1,13 @@
-module Stylesheet exposing (stylesheet, Styles(..))
+module Stylesheet exposing (Styles(..), stylesheet)
 
+import Color
+import Header
+import Pages.ProjectIndex as ProjectIndex
 import SharedStyles exposing (font, scaledFont)
+import Style exposing (..)
 import Style.Color as Color
 import Style.Font as Font
-import Color
-import Style exposing (..)
 import Style.Sheet
-import ProjectIndex
-import Header
 
 
 stylesheet =

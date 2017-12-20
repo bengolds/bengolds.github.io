@@ -1,10 +1,12 @@
 module Msg exposing (..)
 
 import Navigation exposing (Location)
+import Page exposing (Page)
 import Reading exposing (Book)
 
 
 type Msg
-    = UrlChange Location
+    = Noop
+    | UrlChange Page
     | BookReceived (Result String Book)
     | ResetCliplet String

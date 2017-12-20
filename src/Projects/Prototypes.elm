@@ -11,5 +11,5 @@ prototypes =
     , description = "games that were not to be"
     , imageLocation = "exquisine-icon.png"
     , clipletLocation = "exquisine-cliplet.webm"
-    , url = "#/prototypes"
+    , url = "#/projects/prototypes"
     }

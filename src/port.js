@@ -4,4 +4,7 @@ function port(msg) {
     document.querySelector("video#"+msg.data).currentTime = 0;
     console.log(document.getElementById(msg.data));
   }
+  else if (msg.tag == "SetTitle") {
+    document.title = msg.data;
+  }
 }
