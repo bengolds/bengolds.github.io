@@ -28,7 +28,7 @@ element =
                     empty
                 )
             , el Label [] (text "About me")
-            , paragraph "I live for the feeling of a system coming alive in my mind. What was once a set of impenetrable symbols becomes a lens through which the whole world looks different."
-            , paragraph "Mathematics gives us the language and mindset to probe the world. Interactive visualizations bring those findings to life. Game development engages our whole body and brain to embed these systems in our bones."
-            , paragraph "While at University, I learned how to make whatever I imagined come alive on a screen. At Pixar, I learned how to build tools to translate from the inner vision to the outer world. And at Google, I learned how to help people work together to bring their visions to life. Now, I'd like to discover new ways to see the world and give those lenses to everyone."
+            , paragraph "I like to make science and math come to life. I do this by transforming written words and equations into something you can poke and prod. Everyone transforms the systems they learn about into these interactive toys; they're just usually trapped inside of people's heads. I want to bring them out into the light of day so that you can play along with me."
+            , paragraph "I started pursing these ideas when studying interactive graphics at Stanford. Since then, I've worked at Pixar and Google. I left Google in 2016 to explore. Some of those explorations are captured on this website! Many others are secret explorations, tucked away in my heart."
+            , paragraph "When I'm not in front of a screen, I'm practicing aikido, going backpacking, or reading some Vonnegut. If you want to get a hold of me, I can be found at theotherben (at) gmail.com"
             ]
