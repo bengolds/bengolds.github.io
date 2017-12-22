@@ -5,7 +5,7 @@ type Page
     = AboutPage
     | ResumePage
     | ProjectIndexPage
-    | ProjectPage String
+    | PrototypesPage
 
 
 getTitle : Page -> String
@@ -20,5 +20,5 @@ getTitle page =
         ProjectIndexPage ->
             "Ben's Projects"
 
-        ProjectPage name ->
-            name
+        PrototypesPage ->
+            "Ben's Prototypes"

@@ -25,6 +25,18 @@ stylesheet =
             [ Font.lineHeight 1.2
             , Font.typeface [ "Oxygen" ]
             ]
+        , style Link
+            [ Font.lineHeight 1.2
+            , Font.typeface [ "Oxygen" ]
+            , Font.underline
+            , Color.text Color.darkCharcoal
+            , hover
+                [ Color.background Color.gray
+                ]
+            , pseudo "visited"
+                [ Color.text Color.darkCharcoal
+                ]
+            ]
         , Style.Sheet.merge <|
             Style.Sheet.map HeaderStyle identity Header.styles
         , Style.Sheet.merge <|
@@ -37,5 +49,6 @@ type Styles
     | Top
     | Label
     | BodyText
+    | Link
     | HeaderStyle Header.Styles
     | ProjectIndexStyle ProjectIndex.Styles

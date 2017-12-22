@@ -6,6 +6,7 @@ import Msg exposing (Msg)
 import Page exposing (Page(..))
 import Pages.About as About
 import Pages.ProjectIndex as ProjectIndex
+import Pages.Prototypes as Prototypes
 import Stylesheet exposing (Styles(..))
 
 
@@ -17,6 +18,9 @@ render page =
 
         AboutPage ->
             About.element
+
+        PrototypesPage ->
+            Prototypes.element
 
         _ ->
             text (toString page)

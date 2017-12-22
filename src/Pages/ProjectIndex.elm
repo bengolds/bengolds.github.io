@@ -27,8 +27,8 @@ type alias Category =
 
 categories : List Category
 categories =
-    [ ( "Games", [ spearmints, rainbowRacer, prototypes ] )
-    , ( "Software", [ playbook, symmetry ] )
+    [ ( "Software", [ playbook, symmetry ] )
+    , ( "Games", [ spearmints, rainbowRacer, prototypes ] )
     ]
 
 

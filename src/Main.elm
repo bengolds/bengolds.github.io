@@ -95,7 +95,7 @@ pageParser =
         , UrlParser.map Page.AboutPage <| s "about"
         , UrlParser.map Page.ResumePage <| s "resume"
         , UrlParser.map Page.ProjectIndexPage <| s "projects"
-        , UrlParser.map Page.ProjectPage <| (s "projects" </> string)
+        , UrlParser.map Page.PrototypesPage <| s "prototypes"
         ]
 
 
