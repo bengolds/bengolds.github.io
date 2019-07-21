@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/bengolds
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://bengolds.github.io
+  * I am bengolds (https://keybase.io/bengolds) on keybase.
+  * I have a public key ASA0jH4PrJIlI3djY3zTHIAOpICYOcaUv6WbL2n33p6yrgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120ac414c2644a3e613ba30e552acfd87bb1f98c3f8ec2bb970e7d476bfcf05a8570a",
+      "host": "keybase.io",
+      "kid": "0120348c7e0fac9225237763637cd31c800ea4809839c694bfa59b2f69f7de9eb2ae0a",
+      "uid": "4bd417407a8364c0ae05c3f3ee5e6419",
+      "username": "bengolds"
+    },
+    "merkle_root": {
+      "ctime": 1563695302,
+      "hash": "bbb36d9392893120be678e49f672b6bd38fa831c816ce93724b5eb495e1f677daf2db06d950d09a61f0bc1543cf3366021fa56a476e479a3a356e23b506a7449",
+      "hash_meta": "ad6ff30f6351c974e4192cf8ca1792356d65e178a49cad0eb04deb63a8e9ca20",
+      "seqno": 5813952
+    },
+    "service": {
+      "entropy": "72c8mlilA99DSmrz+jqgcSlF",
+      "hostname": "bengolds.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.2.0"
+  },
+  "ctime": 1563695313,
+  "expire_in": 504576000,
+  "prev": "6a23b645e005ee3d396f782bd59d005a69364a28537e09e536aa6e13671c878e",
+  "seqno": 16,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgNIx+D6ySJSN3Y2N80xyADqSAmDnGlL+lmy9p996esq4Kp3BheWxvYWTESpcCEMQgaiO2ReAF7j05b3gr1Z0AWmk2SihTfgnlNqpuE2cch47EIOZAXNKyW990WH4OmKPBF6VcIy1KrFDDz+kZ0RJ5nyK9AgHCo3NpZ8RAiTc9dpUPWitAt2QuKl0bdDIKWqZh9gxP6WZsS1rkmMYQLqLjOElnCKKK/MV3TqjUtYNVm+914ZszY+w4DKRXCKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIOH2uRwKBwTCPqez7ftOZ7BbgYwvdWDII3jzSSwf6FuKo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/bengolds
+
+==================================================================
